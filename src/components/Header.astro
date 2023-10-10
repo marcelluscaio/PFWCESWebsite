@@ -1,6 +1,11 @@
 <header>
   <div class="container">
-    <h1>Logo</h1>
+    <h1 class="title">
+      <a href="#">
+        <img src="public/images/logo.png" alt="PFWCES logo" >
+        PFWCES
+      </a>
+    </h1>
     <nav>
       <ul>
         <li>
@@ -41,6 +46,19 @@
     justify-content: space-between;
     gap: var(--fs-11);
     align-items: center;
+  }
+
+  h1 > a{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+
+    font-weight: var(--fw-4);
+    font-size: var(--fs-6);
+    text-shadow: 1px -1px white, 1px 1px white;
+  }
+  h1 img{
+    width: 20%;
   }
 
   ul{
