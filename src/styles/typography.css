@@ -1,0 +1,42 @@
+body{
+  color: var(--black-400);
+}
+
+:root{
+  --fs-2: 1rem; /*16px*/
+  --fs-3: 1.125rem; /*18px*/
+  --fs-4: 1.25rem; /*20px*/
+  --fs-5: 1.375rem; /*22px*/
+  --fs-6: 1.5rem; /*24px*/
+  --fs-11: 2.625rem; /*42px*/
+
+  --fw-1: 400;
+  --fw-2: 500;
+  --fw-3: 600;
+  --fw-4: 700;
+}
+
+.title{
+  font-family: 'Nunito', sans-serif;
+  line-height: 1.2;
+}
+
+.title--header{
+  font-size: var(--fs-3);
+  font-weight: var(--fw-2);
+}
+
+.button{
+  display: inline-block;
+  
+  padding: 0.625em 1.25em;
+  border: 1px solid var(--black-400);     
+  
+  background-color: var(--red-700);
+
+  font-size: var(--fs-2);
+  font-weight: var(--fw-3);
+  color: var(--white-700);
+
+  box-shadow: 4px 4px 0px rgba(0 0 0, 0.25);
+}
