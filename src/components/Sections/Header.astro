@@ -1,18 +1,20 @@
+---
+import Button from "../Elements/Button.astro";
+---
+
 <header>
   <div class="container">
-    <h1 class="title">
-      <a href="#">
-        <img src="images/logo.png" alt="PFWCES logo" >
-        PFWCES
-      </a>
-    </h1>
+    <a href="#" class="title">
+      <img src="images/logo.png" alt="PFWCES logo" >
+      PFWCES
+    </a>
     <nav>
       <ul>
         <li>
           <a href="#" class="title title--header">The Problem</a>
         </li>
         <li>
-          <a href="#" class="title title--header">Our Phylosophy</a>
+          <a href="#" class="title title--header">Our Philosophy</a>
         </li>
         <li>
           <a href="#" class="title title--header">Solution</a>
@@ -27,7 +29,7 @@
           <a href="#" class="title title--header">Testimonials</a>
         </li>
         <li>
-          <a href="#" class="title button">Talk to us</a>
+          <Button text="Talk to us" href="#"></Button>
         </li>
       </ul>
     </nav>
@@ -48,7 +50,7 @@
     align-items: center;
   }
 
-  h1 > a{
+  .container > a{
     display: flex;
     align-items: center;
     gap: .5rem;
@@ -57,7 +59,7 @@
     font-size: var(--fs-6);
     text-shadow: 1px -1px white, 1px 1px white;
   }
-  h1 img{
+  a > img{
     width: 20%;
   }
 

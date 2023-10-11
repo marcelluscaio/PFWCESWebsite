@@ -4,7 +4,7 @@ import "../styles/colors.css";
 import "../styles/typography.css";
 import "../styles/margins.css";
 
-import Header from '../components/Header.astro';
+import Header from '../components/Sections/Header.astro';
 
 interface Props {
 	title: string;
@@ -22,7 +22,7 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Nunito&display=swap" rel="stylesheet">
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
