@@ -1,44 +1,57 @@
-body{
-  color: var(--black-400);
+body {
+	color: var(--black-400);
 }
 
-:root{
-  --fs-1: .875rem; /* 14px */
-  --fs-2: 1rem; /*16px*/
-  --fs-3: 1.125rem; /*18px*/
-  --fs-4: 1.25rem; /*20px*/
-  --fs-5: 1.375rem; /*22px*/
-  --fs-6: 1.5rem; /*24px*/
-  --fs-8: 2rem; /* 32px */
-  --fs-11: 2.625rem; /*42px*/
-  --fs-12: 3rem; /*48px*/
-  --fs-13: 3.5rem; /*56px*/
-  --fs-14: 4rem; /*64px*/
+:root {
+	--fs-1: 0.875rem; /* 14px */
+	--fs-2: 1rem; /*16px*/
+	--fs-3: 1.125rem; /*18px*/
+	--fs-4: 1.25rem; /*20px*/
+	--fs-5: 1.375rem; /*22px*/
+	--fs-6: 1.5rem; /*24px*/
+	--fs-7: 1.75rem; /*28px*/
+	--fs-8: 2rem; /* 32px */
+	--fs-9: 2.25rem; /* 36px */
+	--fs-10: 2.5rem; /* 40px */
+	--fs-11: 2.625rem; /*42px*/
+	--fs-12: 3rem; /*48px*/
+	--fs-13: 3.5rem; /*56px*/
+	--fs-14: 4rem; /*64px*/
 
-  --fw-1: 400;
-  --fw-2: 500;
-  --fw-3: 600;
-  --fw-4: 700;
+	--fw-1: 400;
+	--fw-2: 500;
+	--fw-3: 600;
+	--fw-4: 700;
 }
 
-.title{
-  font-family: 'Nunito', sans-serif;
-  line-height: 1.2;
+.title {
+	font-family: "Nunito", sans-serif;
+	line-height: 1.2;
 }
 
-.title--header{
-  font-size: var(--fs-3);
-  font-weight: var(--fw-2);
+.title--header {
+	font-size: var(--fs-3);
+	font-weight: var(--fw-2);
 }
 
-.title--medium{
-  font-size: var(--fs-12);
-  font-weight: var(--fw-3);
+.title--small {
+	font-size: var(--fs-7);
+	font-weight: var(--fw-4);
 }
 
-.regular-text{
-  font-family: 'EB Garamond', serif;
-  line-height: 1.5;
-  font-size: var(--fs-4);
-  font-weight: var(--fw-2);
+.title--medium {
+	font-size: var(--fs-12);
+	font-weight: var(--fw-3);
+}
+
+.title--large {
+	font-size: var(--fs-14);
+	font-weight: var(--fw-3);
+}
+
+.regular-text {
+	font-family: "EB Garamond", serif;
+	line-height: 1.5;
+	font-size: var(--fs-4);
+	font-weight: var(--fw-2);
 }
