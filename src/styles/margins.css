@@ -1,4 +1,8 @@
-.container{
-  width: 91.7%;
-  margin-inline: auto;
+section {
+	margin-bottom: 10rem;
+}
+
+.container {
+	width: 91.7%;
+	margin-inline: auto;
 }

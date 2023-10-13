@@ -1,11 +1,16 @@
 ---
+import SectionHeading from "../Elements/SectionHeading.astro";
 import Button from "../Elements/Button.astro";
 ---
 <section>
   <div class="container">
     <div class="row">
       <img src="images/OurPhilosophy.jpg" alt="Woman and two girls looking at crops">
-      <h2 class="title title--large"><span>Our philosophy</span> We believe in a sustainable lifestyle</h2>
+      <SectionHeading 
+        smallText="Our philosophy" 
+        bigText="We believe in a sustainable lifestyle"
+        width="32.5%"
+      />
     </div>
     <ul>
       <li>
@@ -32,10 +37,6 @@ import Button from "../Elements/Button.astro";
 </section>
 
 <style>
-  section{
-    margin-bottom: 10rem;
-  }
-  
   .row{
     display: flex;
     justify-content: space-between;
@@ -46,18 +47,6 @@ import Button from "../Elements/Button.astro";
 
   img{
     width: 51.5%;
-  }
-
-  h2{
-    width: 32.5%;
-  }
-
-  .title span{
-    display: block;
-
-    font-family: 'EB Garamond', serif;    
-    font-size: var(--fs-3);
-    color: var(--red-700);
   }
 
   ul{

@@ -1,0 +1,25 @@
+---
+interface Props{
+  smallText: string;
+  bigText: string;
+  width?: string;
+}
+
+const { smallText, bigText, width = "100%" } = Astro.props;
+---
+
+<h2 class="title title--large"><span>{ smallText }</span> { bigText }</h2>
+
+<style define:vars={{width}}>
+  h2{
+    width: var(--width);
+  }
+  
+  span{
+    display: block;
+
+    font-family: 'EB Garamond', serif;    
+    font-size: var(--fs-3);
+    color: var(--red-700);
+  }
+</style>
