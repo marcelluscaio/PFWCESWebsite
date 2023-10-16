@@ -1,0 +1,61 @@
+---
+import SectionHeading from "../Elements/SectionHeading.astro";
+import Button from "../Elements/Button.astro";
+---
+
+<section>
+  <div class="container">
+    <div class="text-content">
+      <SectionHeading
+        smallText="Our Solution"
+        bigText="4Ever Homes and Communities"
+      />
+      <p class="regular-text">
+        Our hybrid sustainable homes with an integrated agriculture room save
+        families $6000 + yearly. Our 4Ever Homes are developed faster than
+        traditional homes, while still being cost effective. We have at this
+        moment 57 acres of land for developing our vision, we have built
+        relationships with manufactures and other key players along with
+        volunteers and a social following of 80,000 + globally and growing.<br
+        />4Ever Homes is our brand of hybrid and sustainable homes that are
+        designed to help families creating a new lifestyle by saving them money,
+        increasing their food security, and allowing the creation of strong
+        social bonds.
+      </p>
+      <div>
+        <Button href="#" text="The Benefits" />
+      </div>
+    </div>
+    <img src="images/model-home-1.png" />
+    <img src="images/model-home-2.png" />
+    <img src="images/model-home-3.png" />
+    <img src="images/model-home-4.png" />
+  </div>
+</section>
+
+<style>
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 43%;
+    grid-template-rows: 60% 40%;
+    gap: var(--fs-8);
+  }
+
+  .text-content {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+  }
+
+  p {
+    margin-top: var(--fs-8);
+    margin-bottom: var(--fs-9);
+  }
+
+  img {
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>
