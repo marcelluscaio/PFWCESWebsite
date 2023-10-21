@@ -21,7 +21,7 @@ import Button from "../Elements/Button.astro";
       <p class="regular-text">
         4Ever Homes is our brand of hybrid and sustainable homes that are designed to help families creating a new lifestyle by saving them money, increasing their food security, and allowing the creation of strong social bonds.
       </p>
-      <div>
+      <div class="button">
         <Button href="#" text="The Benefits" />
       </div>
     </div>
@@ -44,7 +44,7 @@ import Button from "../Elements/Button.astro";
   .container {
     display: grid;
     grid-template-columns: 1fr 1fr 43%;
-    grid-template-rows: 3fr 2fr;
+    grid-template-rows: /* 3fr 2fr */ auto auto;
     gap: var(--fs-9) var(--fs-8);
   }
 
@@ -64,15 +64,12 @@ import Button from "../Elements/Button.astro";
     margin-bottom: var(--fs-7);
   }
 
-  .img{
-    position: relative;
-
+  .button{
+    margin-bottom: 80px;
   }
 
-  img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+  .img{
+    position: relative;    
   }
 
   .img::after{
@@ -84,6 +81,12 @@ import Button from "../Elements/Button.astro";
     background-color: #000000;
 
     opacity: 35%;
-
   }
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
 </style>
