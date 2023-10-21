@@ -18,7 +18,8 @@ import Button from "../Elements/Button.astro";
         relationships with manufactures and other key players along with
         volunteers and a social following of 80,000 + globally and growing.
       </p>
-      <p class="regular-text">4Ever Homes is our brand of hybrid and sustainable homes that are designed to help families creating a new lifestyle by saving them money, increasing their food security, and allowing the creation of strong social bonds.
+      <p class="regular-text">
+        4Ever Homes is our brand of hybrid and sustainable homes that are designed to help families creating a new lifestyle by saving them money, increasing their food security, and allowing the creation of strong social bonds.
       </p>
       <div>
         <Button href="#" text="The Benefits" />
@@ -51,9 +52,16 @@ import Button from "../Elements/Button.astro";
     grid-column: span 2;
   }
 
-  p {
+  p:first-of-type{
     margin-top: var(--fs-8);
-    margin-bottom: var(--fs-9);
+  }
+
+  p + p{
+    margin-top: var(--fs-5);
+  }
+
+  p:last-of-type{
+    margin-bottom: var(--fs-7);
   }
 
   .img{
