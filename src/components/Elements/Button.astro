@@ -1,35 +1,39 @@
 ---
-interface Props{
-  text: string;
-  href: string;
-  type?: "Primary" | "Secondary";
-
+interface Props {
+	text: string;
+	href: string;
+	type?: "Primary" | "Secondary";
 }
 
-const { text, href, type="Primary"} = Astro.props;
+const { text, href, type = "Primary" } = Astro.props;
 ---
 
-<a href={href} class=`title ${type==="Secondary" ? "secondary" : ""}`>
-  {text}
+<a
+	href={href}
+	class=`title ${type==="Secondary" ? "secondary" : ""}`
+>
+	{text}
 </a>
 
 <style>
-  a{
-    display: inline-block;
+	a {
+		display: inline-block;
 
-    padding: 0.625em 1.25em;
-    border: 1px solid var(--black-400);     
-    
-    background-color: var(--red-700);
+		padding: 0.625em 1.25em;
+		border: 1px solid var(--black-400);
 
-    font-size: var(--fs-2);
-    font-weight: var(--fw-3);
-    color: var(--white-700);
+		background-color: var(--red-700);
 
-    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
-  }
+		font-size: var(--fs-2);
+		font-weight: var(--fw-3);
+		color: var(--white-700);
 
-  a.secondary{
-    
-  }
+		box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+	}
+
+	a.secondary {
+		background-color: var(--yellow-200);
+
+		color: var(--black-400);
+	}
 </style>
