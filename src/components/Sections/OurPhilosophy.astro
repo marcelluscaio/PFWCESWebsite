@@ -2,66 +2,89 @@
 import SectionHeading from "../Elements/SectionHeading.astro";
 import Button from "../Elements/Button.astro";
 ---
+
 <section>
-  <div class="container">
-    <div class="row">
-      <img src="images/OurPhilosophy.jpg" alt="Woman and two girls looking at crops">
-      <SectionHeading 
-        smallText="Our philosophy" 
-        bigText="We believe in a sustainable lifestyle"
-        width="32.5%"
-      />
-    </div>
-    <ul>
-      <li>
-        <h3 class="title title--small">Peace of mind</h3>
-        <p class="regular-text">Our hybrid clean energy system eliminates your monthly hydro bills, and our indoor agricultural systems reduce the food security stress.</p>
-      </li>
-      <li>
-        <h3 class="title title--small">Peace of mind</h3>
-        <p class="regular-text">Our hybrid clean energy system eliminates your monthly hydro bills, and our indoor agricultural systems reduce the food security stress.</p>
-      </li>
-      <li>
-        <h3 class="title title--small">Peace of mind</h3>
-        <p class="regular-text">Our hybrid clean energy system eliminates your monthly hydro bills, and our indoor agricultural systems reduce the food security stress.</p>
-      </li>
-      <li>
-        <h3 class="title title--small">Peace of mind</h3>
-        <p class="regular-text">Our hybrid clean energy system eliminates your monthly hydro bills, and our indoor agricultural systems reduce the food security stress.</p>
-      </li>
-      <li>
-        <Button href="#" text="The Solution"></Button>
-      </li>
-    </ul>
-  </div>
+	<div class="container">
+		<div class="row">
+			<img
+				src="images/OurPhilosophy.jpg"
+				alt="Woman and two girls looking at crops"
+			/>
+			<SectionHeading
+				smallText="Our philosophy"
+				bigText="We believe in a sustainable lifestyle"
+				width="32.5%"
+			/>
+		</div>
+		<ul>
+			<li>
+				<h3 class="title title--small">Peace of mind</h3>
+				<p class="regular-text">
+					Our hybrid clean energy system eliminates your monthly hydro
+					bills, and our indoor agricultural systems reduce the food
+					security stress.
+				</p>
+			</li>
+			<li>
+				<h3 class="title title--small">Peace of mind</h3>
+				<p class="regular-text">
+					Our hybrid clean energy system eliminates your monthly hydro
+					bills, and our indoor agricultural systems reduce the food
+					security stress.
+				</p>
+			</li>
+			<li>
+				<h3 class="title title--small">Peace of mind</h3>
+				<p class="regular-text">
+					Our hybrid clean energy system eliminates your monthly hydro
+					bills, and our indoor agricultural systems reduce the food
+					security stress.
+				</p>
+			</li>
+			<li>
+				<h3 class="title title--small">Peace of mind</h3>
+				<p class="regular-text">
+					Our hybrid clean energy system eliminates your monthly hydro
+					bills, and our indoor agricultural systems reduce the food
+					security stress.
+				</p>
+			</li>
+			<li>
+				<Button
+					href="#"
+					text="The Solution"
+				/>
+			</li>
+		</ul>
+	</div>
 </section>
 
 <style>
-  .row{
-    display: flex;
-    justify-content: space-between;
-    gap: 5rem;
-    
-    margin-bottom: var(--fs-11);
-  }
+	.row {
+		display: flex;
+		justify-content: space-between;
+		gap: 5rem;
 
-  img{
-    width: 51.5%;
-  }
+		margin-bottom: var(--fs-11);
+	}
 
-  ul{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--fs-7) var(--fs-10);
+	img {
+		width: 51.5%;
+	}
 
-    width: 54.75%;
-    margin-inline: auto;
-    margin-bottom: var(--fs-14);
-  }
+	ul {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: var(--fs-7) var(--fs-10);
 
-  ul li:last-child{
-    grid-column: span 2;
-    
-    text-align: center;
-  }
+		width: 54.75%;
+		margin-inline: auto;
+		margin-bottom: var(--fs-14);
+	}
+
+	ul li:last-child {
+		grid-column: span 2;
+
+		text-align: center;
+	}
 </style>
