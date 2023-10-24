@@ -1,0 +1,86 @@
+---
+import SectionHeading from "../Elements/SectionHeading.astro";
+import Button from "../Elements/Button.astro";
+---
+
+<section>
+	<div class="container">
+		<div class="main-title">
+			<SectionHeading
+				smallText="The benefits"
+				bigText="Save money, live better, enjoy your social life!"
+			/>
+		</div>
+		<ul>
+			<li>
+				<h3 class="title title--small">Food security</h3>
+				<p class="regular-text">
+					Our Aquaponic, vertical farms, and edible farms, can help to
+					increase food security by providing a consistent supply of fresh
+					produce regardless of weather conditions or other external
+					factors.
+				</p>
+			</li>
+			<li>
+				<h3 class="title title--small">Food security</h3>
+				<p class="regular-text">
+					Our Aquaponic, vertical farms, and edible farms, can help to
+					increase food security by providing a consistent supply of fresh
+					produce regardless of weather conditions or other external
+					factors.
+				</p>
+			</li>
+			<li>
+				<h3 class="title title--small">Food security</h3>
+				<p class="regular-text">
+					Our Aquaponic, vertical farms, and edible farms, can help to
+					increase food security by providing a consistent supply of fresh
+					produce regardless of weather conditions or other external
+					factors.
+				</p>
+			</li>
+		</ul>
+		<div class="button-container">
+			<Button
+				text="Talk to us"
+				href="#"
+			/>
+			<Button
+				text="Our Company"
+				href="#"
+				type="Secondary"
+			/>
+		</div>
+	</div>
+</section>
+
+<style>
+	section {
+		background-color: var(--yellow-200);
+
+		padding-block: 7rem;
+	}
+
+	.main-title {
+		width: 50%;
+		margin-inline: auto;
+		margin-bottom: var(--fs-15);
+
+		text-align: center;
+	}
+
+	ul {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(auto, 40rem));
+		gap: var(--fs-14);
+		justify-content: space-around;
+
+		margin-bottom: var(--fs-15);
+	}
+
+	.button-container {
+		display: flex;
+		justify-content: center;
+		gap: var(--fs-1);
+	}
+</style>

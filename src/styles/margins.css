@@ -4,5 +4,6 @@ section {
 
 .container {
 	width: 91.7%;
+	max-width: 1400px;
 	margin-inline: auto;
 }
