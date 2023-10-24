@@ -1,11 +1,13 @@
 {
+	"plugins": ["prettier-plugin-astro"],
 	"trailingComma": "all",
-	"tabWidth": 2,
 	"useTabs": true,
 	"semi": true,
 	"singleQuote": false,
-	"jsx-single-quote": false,
+	"jsxSingleQuote": false,
 	"singleAttributePerLine": true,
 	"proseWrap": "preserve",
-	"printWidth": 85
+	"printWidth": 85,
+	"astroAllowShorthand": false,
+	"tabWidth": 4
 }

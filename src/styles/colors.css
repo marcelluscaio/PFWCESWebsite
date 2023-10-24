@@ -1,12 +1,12 @@
-:root{
-  --green-400: #C5E3C9;
-  --green-600: #5C7161;
+:root {
+	--green-400: #c5e3c9;
+	--green-600: #5c7161;
 
-  --red-700: #8A382D;
+	--red-700: #8a382d;
 
-  --red-800: #63241C;
+	--red-800: #63241c;
 
-  --black-400: #27302A;
+	--black-400: #27302a;
 
-  --white-700: #FFFFFF;
+	--white-700: #ffffff;
 }
