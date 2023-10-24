@@ -40,7 +40,7 @@ import Button from "../Elements/Button.astro";
 				</p>
 			</li>
 		</ul>
-		<div>
+		<div class="button-container">
 			<Button
 				text="Talk to us"
 				href="#"
@@ -73,7 +73,14 @@ import Button from "../Elements/Button.astro";
 		display: grid;
 		grid-template-columns: repeat(2, minmax(auto, 40rem));
 		gap: var(--fs-14);
-
 		justify-content: space-around;
+
+		margin-bottom: var(--fs-15);
+	}
+
+	.button-container {
+		display: flex;
+		justify-content: center;
+		gap: var(--fs-1);
 	}
 </style>
