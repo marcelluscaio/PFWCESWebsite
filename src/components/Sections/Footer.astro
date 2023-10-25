@@ -65,45 +65,45 @@
 			</ul>
 		</nav>
 		<div>
-			<h3 class="title title--extra-small">Location</h3>
-			<address class="regular-text">
-				705-50 George Butchart Dr. North York ON, M3K 0C9
-			</address>
-		</div>
-		<div>
 			<h3 class="title title--extra-small">Social account</h3>
-			<ul>
+			<ul class="socials">
 				<li>
 					<a
 						href=""
-						class="regular-text"
+						class="regular-text twitter"
 						>Twitter</a
 					>
 				</li>
 				<li>
 					<a
 						href=""
-						class="regular-text"
+						class="regular-text instagram"
 						>Instagram</a
 					>
 				</li>
 				<li>
 					<a
 						href=""
-						class="regular-text"
+						class="regular-text facebook"
 						>Facebook</a
 					>
 				</li>
 				<li>
 					<a
 						href=""
-						class="regular-text"
+						class="regular-text linkedin"
 						>LinkedIn</a
 					>
 				</li>
 			</ul>
 		</div>
-		<div>
+		<div class="location">
+			<h3 class="title title--extra-small">Location</h3>
+			<address class="regular-text">
+				<span>705-50 George Butchart Dr. North York ON, M3K 0C9</span>
+			</address>
+		</div>
+		<div class="phone">
 			<h3 class="title title--extra-small">Phone</h3>
 			<address>
 				<a
@@ -161,5 +161,98 @@
 
 	h3 {
 		margin-bottom: 0.5em;
+	}
+
+	nav li,
+	.socials a,
+	.phone address {
+		display: flex;
+		align-items: center;
+	}
+
+	nav li::before,
+	.location address::before,
+	.socials a::before,
+	.phone address::before {
+		content: "";
+
+		display: inline-block;
+
+		width: 1.5rem;
+		height: 1.5rem;
+
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+	}
+
+	nav li::before {
+		background-image: url("../../../public/images/arrow.svg");
+	}
+
+	.location address {
+		display: flex;
+	}
+
+	.location address,
+	.socials a,
+	.phone address {
+		gap: 0.5rem;
+	}
+
+	.location address::before {
+		margin-top: calc(var(--fs-4) * 0.25);
+	}
+
+	.location address::before {
+		flex-shrink: 0;
+		margin-top: calc(var(--fs-4) * 0.25);
+		/* The line height of the address is fs-4, and the line height is 1.5. We need .25 of the font size on the top of the icon*/
+
+		background-image: url("../../../public/images/location.svg");
+	}
+
+	.socials li + li {
+		margin-top: 0.5rem;
+	}
+
+	.socials .facebook::before {
+		background-image: url("../../../public/images/facebook.svg");
+	}
+
+	.socials .instagram::before {
+		background-image: url("../../../public/images/instagram.svg");
+	}
+
+	.socials .linkedin::before {
+		background-image: url("../../../public/images/linkedin.svg");
+	}
+
+	.socials .twitter::before {
+		background-image: url("../../../public/images/twitter.svg");
+	}
+
+	.phone address::before {
+		background-image: url("../../../public/images/telephone.svg");
+	}
+
+	/* Screens sizes 960px or smaller */
+	@media (max-width: 60em) {
+		.container {
+			justify-items: center;
+		}
+
+		.container > *:nth-child(n + 2) {
+			grid-column: span 2;
+
+			text-align: center;
+		}
+
+		.location address {
+			justify-content: center;
+		}
+
+		.location span {
+			width: 50%;
+		}
 	}
 </style>
