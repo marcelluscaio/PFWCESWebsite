@@ -1,4 +1,5 @@
 <footer>
+	<h2>Footer</h2>
 	<div class="container">
 		<a
 			href="#"
@@ -10,29 +11,107 @@
 			/>
 			 PFWCES
 		</a>
+		<nav>
+			<h3 class="title title--extra-small">Navigation</h3><!-- ?? -->
+			<ul>
+				<li>
+					<a
+						href="#"
+						class="regular-text"
+					>
+						The problem
+					</a>
+				</li>
+				<li>
+					<a
+						href="#"
+						class="regular-text"
+					>
+						Our Philosophy
+					</a>
+				</li>
+				<li>
+					<a
+						href="#"
+						class="regular-text"
+					>
+						Solution
+					</a>
+				</li>
+				<li>
+					<a
+						href="#"
+						class="regular-text"
+					>
+						About us
+					</a>
+				</li>
+				<li>
+					<a
+						href="#"
+						class="regular-text"
+					>
+						Benefits
+					</a>
+				</li>
+				<li>
+					<a
+						href="#"
+						class="regular-text"
+					>
+						Testimonials
+					</a>
+				</li>
+			</ul>
+		</nav>
 		<div>
-			<nav>
-				<h2>Navigation</h2><!-- ?? -->
-				<ul>
-					<li></li>
-				</ul>
-			</nav>
-			<div>
-				<h2>Location</h2>
-				<address></address>
-			</div>
-			<div>
-				<h2>Social account</h2>
-				<ul>
-					<li>
-						<a></a>
-					</li>
-				</ul>
-			</div>
-			<div>
-				<h2>Phone</h2>
-				<address></address>
-			</div>
+			<h3 class="title title--extra-small">Location</h3>
+			<address class="regular-text">
+				705-50 George Butchart Dr. North York ON, M3K 0C9
+			</address>
+		</div>
+		<div>
+			<h3 class="title title--extra-small">Social account</h3>
+			<ul>
+				<li>
+					<a
+						href=""
+						class="regular-text"
+						>Twitter</a
+					>
+				</li>
+				<li>
+					<a
+						href=""
+						class="regular-text"
+						>Instagram</a
+					>
+				</li>
+				<li>
+					<a
+						href=""
+						class="regular-text"
+						>Facebook</a
+					>
+				</li>
+				<li>
+					<a
+						href=""
+						class="regular-text"
+						>LinkedIn</a
+					>
+				</li>
+			</ul>
+		</div>
+		<div>
+			<h3 class="title title--extra-small">Phone</h3>
+			<address>
+				<a
+					href="tel:+14168228559"
+					class="regular-text"
+					>416-822-8559</a
+				>
+			</address>
 		</div>
 	</div>
 </footer>
@@ -43,10 +122,27 @@
 		background-color: var(--green-400);
 	}
 
+	h2 {
+		position: absolute;
+		color: transparent;
+		left: -9999px;
+		z-index: -1;
+	}
+
+	.container {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		column-gap: 7vw;
+		row-gap: 2.5rem;
+	}
+
 	.container > .logo {
 		display: flex;
 		align-items: center;
 		gap: 0.5rem;
+
+		grid-column: 1 / span 4;
+		place-self: center;
 
 		font-weight: var(--fw-4);
 		font-size: var(--fs-6);
@@ -54,7 +150,16 @@
 			1px -1px white,
 			1px 1px white;
 	}
+
 	.logo > img {
-		width: 4.85%;
+		width: calc(2vw + 2.25rem);
+	}
+
+	address {
+		font-style: normal;
+	}
+
+	h3 {
+		margin-bottom: 0.5em;
 	}
 </style>
