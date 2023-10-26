@@ -1,0 +1,141 @@
+---
+import SectionHeading from "../Elements/SectionHeading.astro";
+import Button from "../Elements/Button.astro";
+---
+
+<section>
+	<div class="container">
+		<div class="form-container">
+			<form>
+				<h2 class="title title--large">Talk to us</h2>
+				<ul>
+					<li>
+						<label for="name">Name</label>
+						<input
+							autocomplete="off"
+							id="name"
+							name="name"
+							required
+							title="Please enter your name (e.g. John Doe)"
+							type="text"
+						/>
+					</li>
+					<li>
+						<label for="email">Email</label>
+						<input
+							autocomplete="off"
+							id="email"
+							name="email"
+							required
+							title="Please enter your email address"
+							type="email"
+						/>
+					</li>
+					<li>
+						<label for="phone">Phone</label>
+						<input
+							autocomplete="off"
+							id="phone"
+							name="phone"
+							required
+							title="Please enter a phone number"
+							type="tel"
+						/>
+					</li>
+					<li>
+						<label for="city">City</label>
+						<input
+							autocomplete="off"
+							id="city"
+							name="city"
+							required
+							title="Please enter your city"
+							type="text"
+						/>
+					</li>
+					<li>
+						<label for="province">Province</label>
+						<input
+							autocomplete="off"
+							id="province"
+							name="province"
+							required
+							title="Please enteryour province"
+							type="tel"
+						/>
+					</li>
+					<li>
+						<label for="comments">Tell us more</label>
+						<textarea
+							autocomplete="off"
+							id="comments"
+							name="comments"
+							required
+							rows="6"
+							title="Tell us more"
+						></textarea>
+					</li>
+				</ul>
+				<div class="button-container">
+					<Button
+						href="#"
+						text="Clear all"
+						type="Secondary"
+					/>
+					<Button
+						href="#"
+						text="Submit"
+					/>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>
+
+<style>
+	.form-container {
+		width: 43%;
+		margin: auto;
+	}
+
+	h2 {
+		margin-bottom: var(--fs-11);
+	}
+
+	ul {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		row-gap: var(--fs-6);
+		column-gap: var(--fs-7);
+
+		margin-bottom: var(--fs-8);
+	}
+
+	li {
+		display: flex;
+		flex-direction: column;
+	}
+
+	li:first-child {
+		grid-column: span 2;
+	}
+
+	li:last-child {
+		grid-column: span 2;
+	}
+
+	label {
+		margin-bottom: 0.5rem;
+	}
+
+	input,
+	textarea {
+		background-color: var(--yellow-200);
+		padding: 0.7rem;
+	}
+
+	.button-container {
+		display: flex;
+		gap: var(--fs-2);
+	}
+</style>

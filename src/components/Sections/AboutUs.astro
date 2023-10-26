@@ -1,0 +1,135 @@
+---
+import SectionHeading from "../Elements/SectionHeading.astro";
+import Button from "../Elements/Button.astro";
+---
+
+<section>
+	<div class="container">
+		<img
+			src="images/AboutUs.png"
+			alt="Group of people"
+		/>
+		<div class="grid">
+			<div>
+				<h2 class="title title--large">About us</h2>
+				<h3 class="title title--small">Since 2012</h3>
+				<p class="regular-text">
+					PFWCES (Power From Within Clean Energy Society) is a
+					not-for-profit organization made up of collaborative forward
+					thinking volunteers, a creative united team from 8 countries and
+					growing.
+				</p>
+			</div>
+			<div class="card">
+				<img src="images/founder-profile-image.jpeg" />
+				<h3 class="title title--small">The founder</h3>
+				<p class="regular-text">
+					Lorem ipsum dolor sit amet consectetur. Sit sem lacus nunc ipsum
+					diam ultricies elit. Congue et ac neque massa.
+				</p>
+				<a
+					class="title title--header"
+					href="https://www.linkedin.com/in/isaac-evans-gould-2053a417/"
+					target="_blank"
+					>Find me on Linkedin</a
+				>
+			</div>
+			<div>
+				<h3 class="title title--small">Our Mission</h3>
+				<p class="regular-text">
+					Our mission is to promote sustainable living through clean energy
+					and integrated agriculture, with a focus on creating sustainable
+					homes and communities that are resilient, self-sufficient, and
+					environmentally friendly. We believe that by empowering
+					individuals and communities to live sustainably, we can create a
+					more just and equitable world for all.
+				</p>
+			</div>
+			<div>
+				<h3 class="title title--small">Our Vision</h3>
+				<p class="regular-text">
+					We envision a world where everyone has access to clean, renewable
+					energy, fresh and healthy food, and a healthy environment. We
+					believe that sustainable living is not just about reducing our
+					carbon footprint, but also about building strong and resilient
+					communities that are self-sufficient and can thrive in the face
+					of adversity.
+				</p>
+			</div>
+		</div>
+
+		<div>
+			<Button
+				href="#"
+				text="Talk to us"
+			/>
+		</div>
+	</div>
+</section>
+
+<style>
+	.container {
+		position: relative;
+	}
+
+	.container > img {
+		position: absolute;
+		height: 50%;
+		width: 50%;
+		object-fit: cover;
+		top: 0;
+		left: 0;
+		z-index: -1;
+	}
+
+	.container > div:last-of-type {
+		text-align: center;
+	}
+
+	h2 {
+		margin-bottom: var(--fs-7);
+	}
+
+	.grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		row-gap: 6rem;
+		margin-bottom: var(--fs-15);
+	}
+
+	.grid div {
+		padding-left: 6rem;
+		padding-right: 6rem;
+	}
+
+	.grid > div:first-child {
+		grid-column-start: 2; /* starts at second column */
+		grid-row-start: 1;
+	}
+
+	.card {
+		width: 33%;
+		background-color: var(--green-400);
+		padding: var(--fs-8) !important;
+		grid-column: span 2;
+		margin: auto;
+	}
+
+	.card > img,
+	.card > h3,
+	.card > p,
+	.card > a {
+		margin-bottom: var(--fs-1);
+	}
+
+	.card > img {
+		height: 13rem;
+		width: 100%;
+		object-fit: cover;
+	}
+
+	.card > a {
+		border: 1px solid black;
+		padding: 0.5rem;
+	}
+</style>
