@@ -35,6 +35,11 @@ body {
 	font-weight: var(--fw-2);
 }
 
+.title--extra-small {
+	font-size: var(--fs-5);
+	font-weight: var(--fw-4);
+}
+
 .title--small {
 	font-size: var(--fs-7);
 	font-weight: var(--fw-4);

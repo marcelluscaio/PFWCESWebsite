@@ -4,7 +4,8 @@ import "../styles/colors.css";
 import "../styles/typography.css";
 import "../styles/margins.css";
 
-import Header from '../components/Sections/Header.astro';
+import Header from "../components/Sections/Header.astro";
+import Footer from "../components/Sections/Footer.astro";
 
 interface Props {
 	title: string;
@@ -17,20 +18,42 @@ const { title } = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Nunito&display=swap" rel="stylesheet">
-		<meta name="generator" content={Astro.generator} />
+		<meta
+			name="description"
+			content="Astro description"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width"
+		/>
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="/favicon.svg"
+		/>
+		<link
+			rel="preconnect"
+			href="https://fonts.googleapis.com"
+		/>
+		<link
+			rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossorigin
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Nunito&display=swap"
+			rel="stylesheet"
+		/>
+		<meta
+			name="generator"
+			content={Astro.generator}
+		/>
 		<title>{title}</title>
 	</head>
 	<body>
-		<Header></Header>
+		<Header />
 		<slot />
+		<Footer />
 	</body>
 </html>
-<style is:global>
-	
-</style>
+<style is:global></style>

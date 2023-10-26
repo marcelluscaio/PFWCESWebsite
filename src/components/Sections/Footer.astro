@@ -1,0 +1,258 @@
+<footer>
+	<h2>Footer</h2>
+	<div class="container">
+		<a
+			href="#"
+			class="title logo"
+		>
+			<img
+				src="images/logo.png"
+				alt="PFWCES logo"
+			/>
+			 PFWCES
+		</a>
+		<nav>
+			<h3 class="title title--extra-small">Navigation</h3><!-- ?? -->
+			<ul>
+				<li>
+					<a
+						href="#"
+						class="regular-text"
+					>
+						The problem
+					</a>
+				</li>
+				<li>
+					<a
+						href="#"
+						class="regular-text"
+					>
+						Our Philosophy
+					</a>
+				</li>
+				<li>
+					<a
+						href="#"
+						class="regular-text"
+					>
+						Solution
+					</a>
+				</li>
+				<li>
+					<a
+						href="#"
+						class="regular-text"
+					>
+						About us
+					</a>
+				</li>
+				<li>
+					<a
+						href="#"
+						class="regular-text"
+					>
+						Benefits
+					</a>
+				</li>
+				<li>
+					<a
+						href="#"
+						class="regular-text"
+					>
+						Testimonials
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<div>
+			<h3 class="title title--extra-small">Social account</h3>
+			<ul class="socials">
+				<li>
+					<a
+						href=""
+						class="regular-text twitter"
+						>Twitter</a
+					>
+				</li>
+				<li>
+					<a
+						href=""
+						class="regular-text instagram"
+						>Instagram</a
+					>
+				</li>
+				<li>
+					<a
+						href=""
+						class="regular-text facebook"
+						>Facebook</a
+					>
+				</li>
+				<li>
+					<a
+						href=""
+						class="regular-text linkedin"
+						>LinkedIn</a
+					>
+				</li>
+			</ul>
+		</div>
+		<div class="location">
+			<h3 class="title title--extra-small">Location</h3>
+			<address class="regular-text">
+				<span>705-50 George Butchart Dr. North York ON, M3K 0C9</span>
+			</address>
+		</div>
+		<div class="phone">
+			<h3 class="title title--extra-small">Phone</h3>
+			<address>
+				<a
+					href="tel:+14168228559"
+					class="regular-text"
+					>416-822-8559</a
+				>
+			</address>
+		</div>
+	</div>
+</footer>
+
+<style>
+	footer {
+		padding-block: 6rem 4rem;
+		background-color: var(--green-400);
+	}
+
+	h2 {
+		position: absolute;
+		color: transparent;
+		left: -9999px;
+		z-index: -1;
+	}
+
+	.container {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		column-gap: 7vw;
+		row-gap: 2.5rem;
+	}
+
+	.container > .logo {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+
+		grid-column: 1 / span 4;
+		place-self: center;
+
+		font-weight: var(--fw-4);
+		font-size: var(--fs-6);
+		text-shadow:
+			1px -1px white,
+			1px 1px white;
+	}
+
+	.logo > img {
+		width: calc(2vw + 2.25rem);
+	}
+
+	address {
+		font-style: normal;
+	}
+
+	h3 {
+		margin-bottom: 0.5em;
+	}
+
+	nav li,
+	.socials a,
+	.phone address {
+		display: flex;
+		align-items: center;
+	}
+
+	nav li::before,
+	.location address::before,
+	.socials a::before,
+	.phone address::before {
+		content: "";
+
+		display: inline-block;
+
+		width: 1.5rem;
+		height: 1.5rem;
+
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+	}
+
+	nav li::before {
+		background-image: url("../../../public/images/arrow.svg");
+	}
+
+	.location address {
+		display: flex;
+	}
+
+	.location address,
+	.socials a,
+	.phone address {
+		gap: 0.5rem;
+	}
+
+	.location address::before {
+		margin-top: calc(var(--fs-4) * 0.25);
+	}
+
+	.location address::before {
+		flex-shrink: 0;
+		margin-top: calc(var(--fs-4) * 0.25);
+		/* The line height of the address is fs-4, and the line height is 1.5. We need .25 of the font size on the top of the icon*/
+
+		background-image: url("../../../public/images/location.svg");
+	}
+
+	.socials li + li {
+		margin-top: 0.5rem;
+	}
+
+	.socials .facebook::before {
+		background-image: url("../../../public/images/facebook.svg");
+	}
+
+	.socials .instagram::before {
+		background-image: url("../../../public/images/instagram.svg");
+	}
+
+	.socials .linkedin::before {
+		background-image: url("../../../public/images/linkedin.svg");
+	}
+
+	.socials .twitter::before {
+		background-image: url("../../../public/images/twitter.svg");
+	}
+
+	.phone address::before {
+		background-image: url("../../../public/images/telephone.svg");
+	}
+
+	/* Screens sizes 960px or smaller */
+	@media (max-width: 60em) {
+		.container {
+			justify-items: center;
+		}
+
+		.container > *:nth-child(n + 2) {
+			grid-column: span 2;
+
+			text-align: center;
+		}
+
+		.location address {
+			justify-content: center;
+		}
+
+		.location span {
+			width: 50%;
+		}
+	}
+</style>
