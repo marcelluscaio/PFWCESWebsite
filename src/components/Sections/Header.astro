@@ -3,74 +3,113 @@ import Button from "../Elements/Button.astro";
 ---
 
 <header>
-  <div class="container">
-    <a href="#" class="title">
-      <img src="images/logo.png" alt="PFWCES logo" >
-      PFWCES
-    </a>
-    <nav>
-      <ul>
-        <li>
-          <a href="#" class="title title--header">The Problem</a>
-        </li>
-        <li>
-          <a href="#" class="title title--header">Our Philosophy</a>
-        </li>
-        <li>
-          <a href="#" class="title title--header">Solution</a>
-        </li>
-        <li>
-          <a href="#" class="title title--header">Benefits</a>
-        </li>
-        <li>
-          <a href="#" class="title title--header">About us</a>
-        </li>
-        <li>
-          <a href="#" class="title title--header">Testimonials</a>
-        </li>
-        <li>
-          <Button text="Talk to us" href="#"></Button>
-        </li>
-      </ul>
-    </nav>
-  </div>
+	<div class="container">
+		<a
+			href="#"
+			class="title"
+		>
+			<img
+				src="images/logo.png"
+				alt="PFWCES logo"
+			/>
+			 PFWCES
+		</a>
+		<nav>
+			<ul>
+				<li>
+					<a
+						href="#the-problem"
+						class="title title--header"
+						>The Problem</a
+					>
+				</li>
+				<li>
+					<a
+						href="#our-philosophy"
+						class="title title--header"
+						>Our Philosophy</a
+					>
+				</li>
+				<li>
+					<a
+						href="#our-solution"
+						class="title title--header"
+						>Solution</a
+					>
+				</li>
+				<li>
+					<a
+						href="#the-benefits"
+						class="title title--header"
+						>Benefits</a
+					>
+				</li>
+				<li>
+					<a
+						href="#about-us"
+						class="title title--header"
+						>About us</a
+					>
+				</li>
+				<!-- <li>
+					<a
+						href="#"
+						class="title title--header"
+						>Testimonials</a
+					>
+				</li> -->
+				<li>
+					<Button
+						text="Talk to us"
+						href="#talk-to-us"
+					/>
+				</li>
+			</ul>
+		</nav>
+	</div>
 </header>
 
 <style>
-  header{
-    padding-block: var(--fs-5) var(--fs-11);
-    
-    background-color: var(--green-400);
-  }
+	header {
+		padding-block: var(--fs-5) var(--fs-11);
 
-  .container{
-    display: flex;
-    justify-content: space-between;
-    gap: var(--fs-11);
-    align-items: center;
-  }
+		background-color: var(--green-400);
+	}
 
-  .container > a{
-    display: flex;
-    align-items: center;
-    gap: .5rem;
+	.container {
+		display: flex;
+		justify-content: space-between;
+		gap: var(--fs-11);
+		align-items: center;
+	}
 
-    font-weight: var(--fw-4);
-    font-size: var(--fs-6);
-    text-shadow: 1px -1px white, 1px 1px white;
-  }
-  a > img{
-    width: 20%;
-  }
+	.container > a {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
 
-  ul{
-    display: flex;
-    align-items: center;
-    gap: var(--fs-6);
-    flex-wrap: wrap;
-  }
+		font-weight: var(--fw-4);
+		font-size: var(--fs-6);
+		text-shadow:
+			1px -1px white,
+			1px 1px white;
+	}
+	a > img {
+		width: 15%;
+	}
 
-  li:last-child{
-    margin-left: var(--fs-3);
-  }
+	ul {
+		display: flex;
+		align-items: center;
+		gap: var(--fs-6);
+		flex-wrap: wrap;
+	}
+
+	li:last-child {
+		margin-left: var(--fs-3);
+	}
+
+	li > a:hover {
+		font-weight: var(--fw-4);
+	}
 </style>
