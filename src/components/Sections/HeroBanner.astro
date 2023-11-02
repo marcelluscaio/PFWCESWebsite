@@ -1,72 +1,81 @@
 ---
 import Button from "../Elements/Button.astro";
 ---
+
 <section>
-  <div class="green-bg">
-    <div class="container">
-      <div>
-        <h1 class="title title--medium">We design affordable, sustainable & community-friendly homes.</h1>
-        <p class="regular-text">Our vision is to build affordable homes and communities that bring you peace of mind, reduce your expenses, create additional revenue, and give you a sense of control. </p>
-        <Button text="Why should you care?" href="#"></Button>
-      </div>
-    </div>
-  </div>
-  <div class="white-bg">
-    <div class="container">
-      <div>
-        <p class="regular-text">We are trusted by 10+ partners</p>
-      </div>
-    </div>
-  </div>
-  <div class="image-container">
-    <img src="images/house.webp">
-  </div>
+	<div class="green-bg">
+		<div class="container">
+			<div>
+				<h1 class="title title--medium">
+					We design affordable, sustainable & community-friendly homes.
+				</h1>
+				<p class="regular-text">
+					Our vision is to build affordable homes and communities that
+					bring you peace of mind, reduce your expenses, create additional
+					revenue, and give you a sense of control.
+				</p>
+				<Button
+					text="Why should you care?"
+					href="#the-problem"
+				/>
+			</div>
+		</div>
+	</div>
+	<div class="white-bg">
+		<div class="container">
+			<div>
+				<p class="regular-text">We are in a joint venture with</p>
+			</div>
+		</div>
+	</div>
+	<div class="image-container">
+		<img src="images/model-home-4.webp" />
+	</div>
 </section>
 
 <style>
-  section{
-    position: relative;
-  }
+	section {
+		position: relative;
+	}
 
-  .container > div{
-    width: 50%;
-  }
+	.container > div {
+		width: 50%;
+	}
 
-  .green-bg{
-    background-color: var(--green-400);
-  }
+	.green-bg {
+		background-color: var(--green-400);
+	}
 
-  .green-bg > .container{
-    padding-block: var(--fs-13);
-  }
+	.green-bg > .container {
+		padding-block: var(--fs-13);
+	}
 
-  .green-bg > .container > div > *{
-    margin-bottom: var(--fs-6);
-  }
+	.green-bg > .container > div > * {
+		margin-bottom: var(--fs-6);
+	}
 
-  .white-bg > .container{
-    padding-block: var(--fs-8);
-  }
+	.white-bg > .container {
+		padding-block: var(--fs-8);
+	}
 
-  .white-bg p{
-    font-size: var(--fs-2);
-    font-weight: 700;
-    color: var(--green-600);
-  }
+	.white-bg p {
+		font-size: var(--fs-2);
+		font-weight: 700;
+		color: var(--green-600);
+	}
 
+	.image-container {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		/* 91.7% is the container's width */
+		right: calc(((100 - 91.7) / 2) * 1%);
+		left: calc((((100 - 91.7) / 2) * 1%) + 133px + (91.7% / 2));
+	}
 
-  .image-container{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    /* 91.7% is the container's width */
-    right: calc(((100 - 91.7) / 2) * 1%);
-    left: calc((((100 - 91.7) / 2) * 1%) + 133px + (91.7% /2));
-  }
-
-  img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
+	img {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
 </style>

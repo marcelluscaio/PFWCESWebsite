@@ -3,7 +3,7 @@ import SectionHeading from "../Elements/SectionHeading.astro";
 import Button from "../Elements/Button.astro";
 ---
 
-<section>
+<section id="about-us">
 	<div class="container">
 		<img
 			src="images/AboutUs.png"
@@ -27,12 +27,17 @@ import Button from "../Elements/Button.astro";
 					Lorem ipsum dolor sit amet consectetur. Sit sem lacus nunc ipsum
 					diam ultricies elit. Congue et ac neque massa.
 				</p>
-				<a
+				<!-- <a
 					class="title title--header"
 					href="https://www.linkedin.com/in/isaac-evans-gould-2053a417/"
 					target="_blank"
 					>Find me on Linkedin</a
-				>
+				> -->
+				<Button
+					text="Find me on Linkedin"
+					href="https://www.linkedin.com/in/isaac-evans-gould-2053a417/"
+					type="Secondary"
+				/>
 			</div>
 			<div>
 				<h3 class="title title--small">Our Mission</h3>
@@ -60,7 +65,7 @@ import Button from "../Elements/Button.astro";
 
 		<div>
 			<Button
-				href="#"
+				href="#talk-to-us"
 				text="Talk to us"
 			/>
 		</div>

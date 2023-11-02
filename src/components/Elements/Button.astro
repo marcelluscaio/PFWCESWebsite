@@ -3,14 +3,16 @@ interface Props {
 	text: string;
 	href: string;
 	type?: "Primary" | "Secondary";
+	id?: string;
 }
 
-const { text, href, type = "Primary" } = Astro.props;
+const { text, href, type = "Primary", id = "" } = Astro.props;
 ---
 
 <a
 	href={href}
 	class=`title ${type==="Secondary" ? "secondary" : ""}`
+	id={id}
 >
 	{text}
 </a>
@@ -31,9 +33,17 @@ const { text, href, type = "Primary" } = Astro.props;
 		box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
 	}
 
+	a:hover {
+		background-color: var(--red-800);
+	}
+
 	a.secondary {
 		background-color: transparent;
 
 		color: var(--black-400);
+	}
+
+	a.secondary:hover {
+		background-color: rgba(0, 0, 0, 0.05);
 	}
 </style>
