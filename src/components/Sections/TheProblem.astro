@@ -3,64 +3,71 @@ import SectionHeading from "../Elements/SectionHeading.astro";
 import Button from "../Elements/Button.astro";
 ---
 
-<section>
-  <div class="container">
-    <SectionHeading 
-      smallText="The problem" 
-      bigText="A rising lifestyle cost"
-      width="32%"
-    />
-    <ul>
-      <li>
-        <h3 class="title title--small">Ratification of fresh food</h3>
-        <p class="regular-text">
-          The cost of living has risen with inflation, with has made access to
-          natural and fresh food difficult for more and more Canadians.
-        </p>
-      </li>
-      <li>
-        <h3 class="title title--small">Home shortages</h3>
-        <p class="regular-text">
-          As the demand for homes outstrips the supply, home prices increase,
-          making it difficult for people with lower incomes to afford a home.
-        </p>
-      </li>
-      <li>
-        <img src="images/TheProblem.png" alt="Woman looking worried" />
-      </li>
-      <li>
-        <h3 class="title title--small">Housing affordability</h3>
-        <p class="regular-text">
-          The average price of single family homes in 2022 has exceeded the
-          million dollar mark, making impossible for the working class
-          families to have home ownership.
-        </p>
-      </li>
-      <li>
-        <Button href="#" text="Our Philosophy" />
-      </li>
-    </ul>
-  </div>
+<section id="the-problem">
+	<div class="container">
+		<SectionHeading
+			smallText="The problem"
+			bigText="A rising lifestyle cost"
+			width="32%"
+		/>
+		<ul>
+			<li>
+				<h3 class="title title--small">Ratification of fresh food</h3>
+				<p class="regular-text">
+					The cost of living has risen with inflation, with has made access
+					to natural and fresh food difficult for more and more Canadians.
+				</p>
+			</li>
+			<li>
+				<h3 class="title title--small">Home shortages</h3>
+				<p class="regular-text">
+					As the demand for homes outstrips the supply, home prices
+					increase, making it difficult for people with lower incomes to
+					afford a home.
+				</p>
+			</li>
+			<li>
+				<img
+					src="images/TheProblem.png"
+					alt="Woman looking worried"
+				/>
+			</li>
+			<li>
+				<h3 class="title title--small">Housing affordability</h3>
+				<p class="regular-text">
+					The average price of single family homes in 2022 has exceeded the
+					million dollar mark, making impossible for the working class
+					families to have home ownership.
+				</p>
+			</li>
+			<li>
+				<Button
+					href="#our-philosophy"
+					text="Our Philosophy"
+				/>
+			</li>
+		</ul>
+	</div>
 </section>
 
 <style>
-  .container {
-    display: flex;
-    justify-content: space-between;
-    gap: 5rem;
-  }
+	.container {
+		display: flex;
+		justify-content: space-between;
+		gap: 5rem;
+	}
 
-  ul {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--fs-12) var(--fs-11);
+	ul {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: var(--fs-12) var(--fs-11);
 
-    width: 55%;
-  }
+		width: 55%;
+	}
 
-  ul li:last-child {
-    grid-column: span 2;
+	ul li:last-child {
+		grid-column: span 2;
 
-    text-align: center;
-  }
+		text-align: center;
+	}
 </style>

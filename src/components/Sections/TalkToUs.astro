@@ -1,12 +1,11 @@
 ---
-import SectionHeading from "../Elements/SectionHeading.astro";
 import Button from "../Elements/Button.astro";
 ---
 
-<section>
+<section id="talk-to-us">
 	<div class="container">
 		<div class="form-container">
-			<form>
+			<form id="contact-form">
 				<h2 class="title title--large">Talk to us</h2>
 				<ul>
 					<li>
@@ -78,9 +77,10 @@ import Button from "../Elements/Button.astro";
 				</ul>
 				<div class="button-container">
 					<Button
-						href="#"
+						href="javascript:void(0);"
 						text="Clear all"
 						type="Secondary"
+						id="clearButton"
 					/>
 					<Button
 						href="#"
@@ -100,12 +100,13 @@ import Button from "../Elements/Button.astro";
 
 	h2 {
 		margin-bottom: var(--fs-11);
+		text-align: center;
 	}
 
 	ul {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		row-gap: var(--fs-6);
+		row-gap: var(--fs-2);
 		column-gap: var(--fs-7);
 
 		margin-bottom: var(--fs-8);
@@ -125,13 +126,13 @@ import Button from "../Elements/Button.astro";
 	}
 
 	label {
-		margin-bottom: 0.5rem;
+		margin-bottom: 0.3rem;
 	}
 
 	input,
 	textarea {
 		background-color: var(--yellow-200);
-		padding: 0.7rem;
+		padding: 0.5rem;
 	}
 
 	.button-container {
@@ -139,3 +140,11 @@ import Button from "../Elements/Button.astro";
 		gap: var(--fs-2);
 	}
 </style>
+
+<script>
+	const myForm = document.getElementById("contact-form") as HTMLFormElement;
+
+	document.getElementById("clearButton").addEventListener("click", function () {
+		myForm.reset();
+	});
+</script>
