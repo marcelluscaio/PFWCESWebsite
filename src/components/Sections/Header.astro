@@ -73,6 +73,7 @@ import Button from "../Elements/Button.astro";
 
 	function toggleNavClass() {
 		nav.classList.toggle("open");
+		button.classList.toggle("open");
 	}
 
 	button.addEventListener("click", toggleNavClass);
@@ -133,6 +134,7 @@ import Button from "../Elements/Button.astro";
 	@media (max-width: 60em) {
 		header {
 			position: relative;
+			z-index: 1;
 
 			isolation: isolate;
 		}
@@ -148,19 +150,45 @@ import Button from "../Elements/Button.astro";
 		}
 
 		button {
-			display: block;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			gap: 4px;
 
-			width: 20px;
-			height: 20px;
-			background-color: #000000;
+			--size: var(--fs-6);
+			width: var(--size);
+			height: var(--size);
+			background-color: transparent;
+			border: none;
+
+			transition: transform 0.5s ease-in;
+		}
+
+		button div {
+			width: 90%;
+			height: 3px;
+			background-color: var(--black-400);
+
+			transition: transform 0.5s ease-in;
+		}
+
+		button.open {
+			transform: rotate(90deg);
+		}
+
+		button.open div:first-child {
+			transform: translateY(14px);
+		}
+
+		button.open div:last-child {
+			transform: translateY(-14px);
 		}
 
 		nav {
 			position: absolute;
-			/* top: 100%; */
 			bottom: 0;
 			left: 0;
-			/* transform: translateY(-100%); */
 			z-index: -2;
 
 			width: 100%;
