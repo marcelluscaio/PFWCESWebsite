@@ -14,7 +14,12 @@ import Button from "../Elements/Button.astro";
 			/>
 			 PFWCES
 		</a>
-		<nav>
+		<button id="hamburger">
+			<div></div>
+			<div></div>
+			<div></div>
+		</button>
+		<nav id="navigation">
 			<ul>
 				<li>
 					<a
@@ -51,13 +56,6 @@ import Button from "../Elements/Button.astro";
 						>About us</a
 					>
 				</li>
-				<!-- <li>
-					<a
-						href="#"
-						class="title title--header"
-						>Testimonials</a
-					>
-				</li> -->
 				<li>
 					<Button
 						text="Talk to us"
@@ -68,6 +66,17 @@ import Button from "../Elements/Button.astro";
 		</nav>
 	</div>
 </header>
+
+<script>
+	const button = document.querySelector("#hamburger");
+	const nav = document.querySelector("#navigation");
+
+	function toggleNavClass() {
+		nav.classList.toggle("open");
+	}
+
+	button.addEventListener("click", toggleNavClass);
+</script>
 
 <style>
 	header {
@@ -94,8 +103,9 @@ import Button from "../Elements/Button.astro";
 			1px -1px white,
 			1px 1px white;
 	}
+
 	a > img {
-		width: 4.25vw;
+		width: clamp(40px, 4vw, 70px);
 	}
 
 	ul {
@@ -111,5 +121,62 @@ import Button from "../Elements/Button.astro";
 
 	li > a:hover {
 		font-weight: var(--fw-4);
+	}
+
+	button {
+		display: none;
+	}
+
+	nav.open {
+	}
+
+	@media (max-width: 60em) {
+		header {
+			position: relative;
+
+			isolation: isolate;
+		}
+
+		header::before {
+			content: "";
+
+			position: absolute;
+			inset: 0;
+			z-index: -1;
+
+			background-color: var(--green-400);
+		}
+
+		button {
+			display: block;
+
+			width: 20px;
+			height: 20px;
+			background-color: #000000;
+		}
+
+		nav {
+			position: absolute;
+			/* top: 100%; */
+			bottom: 0;
+			left: 0;
+			/* transform: translateY(-100%); */
+			z-index: -2;
+
+			width: 100%;
+			padding: var(--fs-3);
+
+			background-color: var(--white-700);
+
+			transition: transform 0.5s ease-in;
+		}
+
+		nav.open {
+			transform: translateY(100%);
+		}
+
+		ul {
+			flex-direction: column;
+		}
 	}
 </style>
