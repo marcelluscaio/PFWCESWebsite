@@ -14,7 +14,12 @@ import Button from "../Elements/Button.astro";
 			/>
 			 PFWCES
 		</a>
-		<nav>
+		<button id="hamburger">
+			<div></div>
+			<div></div>
+			<div></div>
+		</button>
+		<nav id="navigation">
 			<ul>
 				<li>
 					<a
@@ -51,13 +56,6 @@ import Button from "../Elements/Button.astro";
 						>About us</a
 					>
 				</li>
-				<!-- <li>
-					<a
-						href="#"
-						class="title title--header"
-						>Testimonials</a
-					>
-				</li> -->
 				<li>
 					<Button
 						text="Talk to us"
@@ -68,6 +66,18 @@ import Button from "../Elements/Button.astro";
 		</nav>
 	</div>
 </header>
+
+<script>
+	const button = document.querySelector("#hamburger");
+	const nav = document.querySelector("#navigation");
+
+	function toggleNavClass() {
+		nav.classList.toggle("open");
+		button.classList.toggle("open");
+	}
+
+	button.addEventListener("click", toggleNavClass);
+</script>
 
 <style>
 	header {
@@ -94,8 +104,9 @@ import Button from "../Elements/Button.astro";
 			1px -1px white,
 			1px 1px white;
 	}
+
 	a > img {
-		width: 15%;
+		width: clamp(40px, 4vw, 70px);
 	}
 
 	ul {
@@ -111,5 +122,89 @@ import Button from "../Elements/Button.astro";
 
 	li > a:hover {
 		font-weight: var(--fw-4);
+	}
+
+	button {
+		display: none;
+	}
+
+	nav.open {
+	}
+
+	@media (max-width: 60em) {
+		header {
+			position: relative;
+			z-index: 1;
+
+			isolation: isolate;
+		}
+
+		header::before {
+			content: "";
+
+			position: absolute;
+			inset: 0;
+			z-index: -1;
+
+			background-color: var(--green-400);
+		}
+
+		button {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			gap: 4px;
+
+			--size: var(--fs-6);
+			width: var(--size);
+			height: var(--size);
+			background-color: transparent;
+			border: none;
+
+			transition: transform 0.5s ease-in;
+		}
+
+		button div {
+			width: 90%;
+			height: 3px;
+			background-color: var(--black-400);
+
+			transition: transform 0.5s ease-in;
+		}
+
+		button.open {
+			transform: rotate(90deg);
+		}
+
+		button.open div:first-child {
+			transform: translateY(14px);
+		}
+
+		button.open div:last-child {
+			transform: translateY(-14px);
+		}
+
+		nav {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			z-index: -2;
+
+			width: 100%;
+			padding: var(--fs-3);
+
+			background-color: var(--white-700);
+
+			transition: transform 0.5s ease-in;
+		}
+
+		nav.open {
+			transform: translateY(100%);
+		}
+
+		ul {
+			flex-direction: column;
+		}
 	}
 </style>
