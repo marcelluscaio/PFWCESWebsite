@@ -5,7 +5,7 @@ import Button from "../Elements/Button.astro";
 <section>
 	<div class="green-bg">
 		<div class="container">
-			<div>
+			<div class="content-size">
 				<h1 class="title title--medium">
 					We design affordable, sustainable & community-friendly homes.
 				</h1>
@@ -21,24 +21,26 @@ import Button from "../Elements/Button.astro";
 			</div>
 		</div>
 	</div>
+	<div class="image-container">
+		<img src="images/model-home-4.webp" />
+	</div>
 	<div class="white-bg">
 		<div class="container">
-			<div>
+			<div class="content-size">
 				<p class="regular-text">We are in a joint venture with</p>
 			</div>
 		</div>
-	</div>
-	<div class="image-container">
-		<img src="images/model-home-4.webp" />
 	</div>
 </section>
 
 <style>
 	section {
 		position: relative;
+
+		background-color: var(--green-400);
 	}
 
-	.container > div {
+	.content-size {
 		width: 50%;
 	}
 
@@ -46,15 +48,19 @@ import Button from "../Elements/Button.astro";
 		background-color: var(--green-400);
 	}
 
-	.green-bg > .container {
+	.white-bg {
+		background-color: var(--white-700);
+	}
+
+	.green-bg .container {
 		padding-block: var(--fs-13);
 	}
 
-	.green-bg > .container > div > * {
+	.green-bg .content-size * {
 		margin-bottom: var(--fs-6);
 	}
 
-	.white-bg > .container {
+	.white-bg .container {
 		padding-block: var(--fs-8);
 	}
 
@@ -69,7 +75,7 @@ import Button from "../Elements/Button.astro";
 		top: 0;
 		bottom: 0;
 		/* 91.7% is the container's width */
-		right: calc(((100 - 91.7) / 2) * 1%);
+		right: max(calc(((100 - 91.7) / 2) * 1%), calc((100% - 1400px) / 2));
 		left: calc((((100 - 91.7) / 2) * 1%) + 133px + (91.7% / 2));
 	}
 
