@@ -84,4 +84,26 @@ import Button from "../Elements/Button.astro";
 		width: 100%;
 		object-fit: cover;
 	}
+
+	@media (max-width: 60em) {
+		.content-size {
+			width: 100%;
+		}
+
+		.image-container {
+			position: relative;
+			inset: unset;
+
+			background-image: linear-gradient(
+				to bottom,
+				transparent 50%,
+				#ffffff calc(50% + 1px)
+			);
+		}
+
+		.image-container img {
+			width: max(70%, min(350px, 91.7%));
+			margin-inline: calc(((100 - 91.7) / 2) * 1%);
+		}
+	}
 </style>
