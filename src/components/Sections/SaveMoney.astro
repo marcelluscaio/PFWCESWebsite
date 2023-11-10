@@ -90,7 +90,10 @@ import Button from "../Elements/Button.astro";
 
 	ul {
 		display: grid;
-		grid-template-columns: repeat(2, minmax(auto, 40rem));
+		grid-template-columns: repeat(
+			auto-fit,
+			minmax(max(min(20rem, 100%), 50% - var(--fs-14) / 2), 1fr)
+		);
 		gap: var(--fs-14);
 		justify-content: space-around;
 
