@@ -56,7 +56,7 @@ import Button from "../Elements/Button.astro";
 	.container {
 		display: grid;
 		grid-template-columns: 1fr 1fr 43%;
-		grid-template-rows: /* 3fr 2fr */ auto auto;
+		/* grid-template-rows: auto auto; */
 		gap: var(--fs-9) var(--fs-8);
 	}
 
@@ -107,5 +107,29 @@ import Button from "../Elements/Button.astro";
 
 	li {
 		padding-left: var(--fs-2);
+	}
+
+	@media (max-width: 60em) {
+		.container {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		.button {
+			margin-bottom: 0;
+		}
+
+		.img {
+			aspect-ratio: 1;
+		}
+	}
+
+	@media (max-width: 35em) {
+		.container {
+			grid-template-columns: repeat(1, 1fr);
+		}
+
+		.text-content {
+			grid-column: span 1;
+		}
 	}
 </style>
