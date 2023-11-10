@@ -5,12 +5,12 @@ import Button from "../Elements/Button.astro";
 
 <section id="about-us">
 	<div class="container">
-		<img
-			src="images/AboutUs.png"
-			alt="Group of people"
-		/>
 		<div class="grid">
-			<div>
+			<img
+				src="images/AboutUs.png"
+				alt="Group of people"
+			/>
+			<div class="main-text">
 				<h2 class="title title--large">About us</h2>
 				<h3 class="title title--small">Since 2012</h3>
 				<p class="regular-text">
@@ -27,12 +27,6 @@ import Button from "../Elements/Button.astro";
 					Lorem ipsum dolor sit amet consectetur. Sit sem lacus nunc ipsum
 					diam ultricies elit. Congue et ac neque massa.
 				</p>
-				<!-- <a
-					class="title title--header"
-					href="https://www.linkedin.com/in/isaac-evans-gould-2053a417/"
-					target="_blank"
-					>Find me on Linkedin</a
-				> -->
 				<Button
 					text="Find me on Linkedin"
 					href="https://www.linkedin.com/in/isaac-evans-gould-2053a417/"
@@ -61,13 +55,12 @@ import Button from "../Elements/Button.astro";
 					of adversity.
 				</p>
 			</div>
-		</div>
-
-		<div>
-			<Button
-				href="#talk-to-us"
-				text="Talk to us"
-			/>
+			<div class="button">
+				<Button
+					href="#talk-to-us"
+					text="Talk to us"
+				/>
+			</div>
 		</div>
 	</div>
 </section>
@@ -77,53 +70,48 @@ import Button from "../Elements/Button.astro";
 		position: relative;
 	}
 
-	.container > img {
-		position: absolute;
-		height: 50%;
-		width: 50%;
-		object-fit: cover;
-		top: 0;
-		left: 0;
-		z-index: -1;
+	.grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: repeat(5, auto);
+		column-gap: 8rem;
+		row-gap: 4rem;
 	}
 
-	.container > div:last-of-type {
-		text-align: center;
+	.grid > img {
+		grid-column: 1 / 2;
+		grid-row: 1 / span 2;
+
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
+
+	.grid > .main-text {
+		padding-bottom: 5rem;
+	}
+
+	.grid > .card {
+		grid-column: 1 / span 2;
+		grid-row: 2 / span 2;
+		justify-self: center;
+
+		width: 33%;
+		background-color: var(--green-400);
+		padding: var(--fs-8);
+	}
+
+	.grid > .button {
+		grid-column: span 2;
+
+		justify-self: center;
 	}
 
 	h2 {
 		margin-bottom: var(--fs-7);
 	}
 
-	.grid {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		row-gap: 6rem;
-		margin-bottom: var(--fs-15);
-	}
-
-	.grid div {
-		padding-left: 6rem;
-		padding-right: 6rem;
-	}
-
-	.grid > div:first-child {
-		grid-column-start: 2; /* starts at second column */
-		grid-row-start: 1;
-	}
-
-	.card {
-		width: 33%;
-		background-color: var(--green-400);
-		padding: var(--fs-8) !important;
-		grid-column: span 2;
-		margin: auto;
-	}
-
-	.card > img,
-	.card > h3,
-	.card > p,
-	.card > a {
+	.card > * {
 		margin-bottom: var(--fs-1);
 	}
 
@@ -133,8 +121,49 @@ import Button from "../Elements/Button.astro";
 		object-fit: cover;
 	}
 
-	.card > a {
-		border: 1px solid black;
-		padding: 0.5rem;
+	@media (max-width: 60em) {
+		.grid {
+			grid-template-rows: repeat(6, auto);
+			column-gap: 1.5rem;
+			row-gap: 2.5rem;
+		}
+
+		.grid > img {
+			grid-column: 1 / span 2;
+			grid-row: 2 / span 2;
+		}
+
+		.grid > .main-text {
+			grid-column: 1 / span 2;
+			grid-row: 1 / 2;
+
+			padding-bottom: 0;
+		}
+
+		.grid > .card {
+			grid-row: 3 / span 2;
+
+			width: 50%;
+		}
+	}
+
+	@media (max-width: 35em) {
+		.grid {
+			grid-template-columns: 1fr;
+			row-gap: 2rem;
+		}
+
+		.grid.grid > * {
+			grid-column: span 1;
+			grid-row: span 1;
+		}
+
+		.grid > .main-text {
+			order: -1;
+		}
+
+		.grid > .card {
+			width: 100%;
+		}
 	}
 </style>
