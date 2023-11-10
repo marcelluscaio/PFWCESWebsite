@@ -5,11 +5,13 @@ import Button from "../Elements/Button.astro";
 
 <section id="the-problem">
 	<div class="container">
-		<SectionHeading
-			smallText="The problem"
-			bigText="A rising lifestyle cost"
-			width="32%"
-		/>
+		<div class="text-wrapper">
+			<SectionHeading
+				smallText="The problem"
+				bigText="A rising lifestyle cost"
+			/>
+		</div>
+		<!-- width="32%" -->
 		<ul>
 			<li>
 				<h3 class="title title--small">Ratification of fresh food</h3>
@@ -65,9 +67,43 @@ import Button from "../Elements/Button.astro";
 		width: 55%;
 	}
 
+	ul img {
+		height: 100%;
+		object-fit: cover;
+	}
+
 	ul li:last-child {
 		grid-column: span 2;
 
 		text-align: center;
+	}
+
+	@media (max-width: 60em) {
+		.container {
+			flex-direction: column;
+			gap: 2.5rem;
+		}
+
+		ul {
+			gap: var(--fs-6);
+
+			width: 100%;
+		}
+	}
+
+	@media (max-width: 35em) {
+		ul {
+			grid-template-columns: 1fr;
+		}
+
+		ul li:nth-child(3) {
+			order: 1;
+		}
+
+		ul li:last-child {
+			grid-column: span 1;
+
+			order: 2;
+		}
 	}
 </style>
