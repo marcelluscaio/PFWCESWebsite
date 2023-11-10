@@ -272,6 +272,18 @@
 		}
 	}
 
+	@media (max-width: 35em) {
+		.container {
+			grid-template-columns: 1fr;
+
+			row-gap: 2.5rem;
+		}
+
+		.container.container > * {
+			grid-column: span 1;
+		}
+	}
+
 	a:hover {
 		font-weight: var(--fw-4);
 	}
