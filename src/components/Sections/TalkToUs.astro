@@ -3,99 +3,103 @@ import Button from "../Elements/Button.astro";
 ---
 
 <section id="talk-to-us">
-	<div class="container">
-		<div class="form-container">
-			<form id="contact-form">
-				<h2 class="title title--large">Talk to us</h2>
-				<ul>
-					<li>
-						<label for="name">Name</label>
-						<input
-							autocomplete="off"
-							id="name"
-							name="name"
-							required
-							title="Please enter your name (e.g. John Doe)"
-							type="text"
-						/>
-					</li>
-					<li>
-						<label for="email">Email</label>
-						<input
-							autocomplete="off"
-							id="email"
-							name="email"
-							required
-							title="Please enter your email address"
-							type="email"
-						/>
-					</li>
-					<li>
-						<label for="phone">Phone</label>
-						<input
-							autocomplete="off"
-							id="phone"
-							name="phone"
-							required
-							title="Please enter a phone number"
-							type="tel"
-						/>
-					</li>
-					<li>
-						<label for="city">City</label>
-						<input
-							autocomplete="off"
-							id="city"
-							name="city"
-							required
-							title="Please enter your city"
-							type="text"
-						/>
-					</li>
-					<li>
-						<label for="province">Province</label>
-						<input
-							autocomplete="off"
-							id="province"
-							name="province"
-							required
-							title="Please enteryour province"
-							type="tel"
-						/>
-					</li>
-					<li>
-						<label for="comments">Tell us more</label>
-						<textarea
-							autocomplete="off"
-							id="comments"
-							name="comments"
-							required
-							rows="6"
-							title="Tell us more"
-						></textarea>
-					</li>
-				</ul>
-				<div class="button-container">
-					<Button
-						href="javascript:void(0);"
-						text="Clear all"
-						type="Secondary"
-						id="clearButton"
+	<div class="container container--form">
+		<form id="contact-form">
+			<h2 class="title title--large">Talk to us</h2>
+			<ul>
+				<li>
+					<label for="name">Name</label>
+					<input
+						autocomplete="off"
+						id="name"
+						name="name"
+						required
+						title="Please enter your name (e.g. John Doe)"
+						type="text"
 					/>
-					<Button
-						href="#"
-						text="Submit"
+				</li>
+				<li>
+					<label for="email">Email</label>
+					<input
+						autocomplete="off"
+						id="email"
+						name="email"
+						required
+						title="Please enter your email address"
+						type="email"
 					/>
-				</div>
-			</form>
-		</div>
+				</li>
+				<li>
+					<label for="phone">Phone</label>
+					<input
+						autocomplete="off"
+						id="phone"
+						name="phone"
+						required
+						title="Please enter a phone number"
+						type="tel"
+					/>
+				</li>
+				<li>
+					<label for="city">City</label>
+					<input
+						autocomplete="off"
+						id="city"
+						name="city"
+						required
+						title="Please enter your city"
+						type="text"
+					/>
+				</li>
+				<li>
+					<label for="province">Province</label>
+					<input
+						autocomplete="off"
+						id="province"
+						name="province"
+						required
+						title="Please enteryour province"
+						type="tel"
+					/>
+				</li>
+				<li>
+					<label for="comments">Tell us more</label>
+					<textarea
+						autocomplete="off"
+						id="comments"
+						name="comments"
+						required
+						rows="6"
+						title="Tell us more"
+					></textarea>
+				</li>
+			</ul>
+			<div class="button-container">
+				<Button
+					href="javascript:void(0);"
+					text="Clear all"
+					type="Secondary"
+					id="clearButton"
+				/>
+				<Button
+					href="#"
+					text="Submit"
+				/>
+			</div>
+		</form>
+		<!-- <div class="form-container">
+		</div> -->
 	</div>
 </section>
 
 <style>
-	.form-container {
+	/* .form-container {
 		width: 43%;
 		margin: auto;
+	} */
+
+	.container--form {
+		width: 43%;
 	}
 
 	h2 {
@@ -138,6 +142,28 @@ import Button from "../Elements/Button.astro";
 	.button-container {
 		display: flex;
 		gap: var(--fs-2);
+	}
+
+	@media (max-width: 60em) {
+		.container--form {
+			width: 91.7%;
+		}
+	}
+
+	@media (max-width: 35em) {
+		ul {
+			grid-template-columns: 1fr;
+		}
+
+		ul > * {
+			grid-column: span 1;
+		}
+
+		.button-container {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			text-align: center;
+		}
 	}
 </style>
 
