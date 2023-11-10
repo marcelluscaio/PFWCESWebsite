@@ -7,3 +7,9 @@ section {
 	max-width: 1400px;
 	margin-inline: auto;
 }
+
+@media (max-width: 60em) {
+	section {
+		margin-bottom: 5rem;
+	}
+}

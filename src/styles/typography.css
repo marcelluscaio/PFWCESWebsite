@@ -25,6 +25,19 @@ body {
 	--fw-4: 700;
 }
 
+@media (max-width: 60em) {
+	:root {
+		--fs-14: var(--fs-12);
+	}
+}
+
+@media (max-width: 35em) {
+	:root {
+		--fs-12: var(--fs-9);
+		--fs-14: var(--fs-9);
+	}
+}
+
 .title {
 	font-family: "Nunito", sans-serif;
 	line-height: 1.2;
