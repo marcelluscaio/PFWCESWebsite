@@ -7,6 +7,21 @@ import OurSolution from "../components/Sections/OurSolution.astro";
 import SaveMoney from "../components/Sections/SaveMoney.astro";
 import AboutUs from "../components/Sections/AboutUs.astro";
 import TalkToUs from "../components/Sections/TalkToUs.astro";
+
+const baseUrl = "http://headlesstest.local/wp-json/wp/v2/posts?slug=";
+
+async function fetchData(slug: string) {
+	const response = await fetch(`${baseUrl}slug`);
+	const data = await response.json();
+	console.log(data);
+}
+
+fetchData("herobanner");
+/* const response = await fetch(
+	"http://headlesstest.local/wp-json/wp/v2/posts?slug=herobanner",
+	); */
+/* const specificPost = data.filter((post) => post.slug === "herobanner");
+console.log(specificPost); */
 ---
 
 <Layout title="Power From Within">
