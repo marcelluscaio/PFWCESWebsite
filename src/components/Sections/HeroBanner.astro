@@ -1,5 +1,6 @@
 ---
 import Button from "../Elements/Button.astro";
+import { Image } from "astro:assets";
 import { baseImageUrl } from "../../utils/domain.ts";
 import type { imagesObject } from "../../utils/types.ts";
 
@@ -15,7 +16,7 @@ type Props = {
 const { heading, description, buttonText, image, subheading, imagesArray } =
 	Astro.props;
 
-let imageUrl = "";
+let imageUrl;
 if (image !== "") {
 	const response = await fetch(`${baseImageUrl}${image}`);
 	const imageObject = await response.json();
@@ -41,7 +42,13 @@ if (image !== "") {
 		</div>
 	</div>
 	<div class="image-container">
-		<img src={imageUrl} />
+		<Image
+			src={imageUrl}
+			alt="imagem"
+			width="800"
+			height="800"
+		/>
+		<!-- <img src={imageUrl} /> -->
 	</div>
 	<div class="white-bg">
 		<div class="container">
