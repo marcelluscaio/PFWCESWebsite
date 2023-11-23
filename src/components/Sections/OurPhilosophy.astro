@@ -1,6 +1,19 @@
 ---
 import SectionHeading from "../Elements/SectionHeading.astro";
 import Button from "../Elements/Button.astro";
+
+const { heading_small_text, heading_big_text, image, list, buttonText } =
+	Astro.props;
+
+const listAsArray = [];
+
+for (const item in list) {
+	const object = list[item];
+	listAsArray.push({
+		title: object["list-title__philosophy"],
+		description: object["list-description__philosophy"],
+	});
+}
 ---
 
 <section id="our-philosophy">
@@ -11,43 +24,25 @@ import Button from "../Elements/Button.astro";
 				alt="Woman and two girls looking at crops"
 			/>
 			<SectionHeading
-				smallText="Our philosophy"
-				bigText="We believe in a sustainable lifestyle"
+				smallText={heading_small_text}
+				bigText={heading_big_text}
 			/>
 		</div>
 		<ul>
-			<li>
-				<h3 class="title title--small">Peace of mind</h3>
-				<p class="regular-text">
-					Our hybrid sustainable homes eliminate your gas, oil and hydro
-					operation cost, by integrating an agriculture system, it will
-					reduce food stress for your family.
-				</p>
-			</li>
-			<li>
-				<h3 class="title title--small">Reduce your expenses</h3>
-				<p class="regular-text">
-					Our hybrid sustainable homes with an integrated agriculture room
-					save families $5000 + annually.
-				</p>
-			</li>
-			<li>
-				<h3 class="title title--small">Additional revenue</h3>
-				<p class="regular-text">
-					Using our indoor agricultural systems, you can generate passive
-					income by becoming a local food source to your community.
-				</p>
-			</li>
-			<li>
-				<h3 class="title title--small">Sense of control</h3>
-				<p class="regular-text">
-					Controlling your own energy, and food source gives you options
-				</p>
-			</li>
+			{
+				listAsArray.map((item) => {
+					return (
+						<li>
+							<h3 class="title title--small">{item.title}</h3>
+							<p class="regular-text">{item.description}</p>
+						</li>
+					);
+				})
+			}
 			<li>
 				<Button
 					href="#our-solution"
-					text="The Solution"
+					text={buttonText}
 				/>
 			</li>
 		</ul>
