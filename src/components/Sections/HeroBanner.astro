@@ -1,5 +1,27 @@
 ---
 import Button from "../Elements/Button.astro";
+import { Image } from "astro:assets";
+import { baseImageUrl } from "../../utils/domain.ts";
+import type { imagesObject } from "../../utils/types.ts";
+
+type Props = {
+	heading: string;
+	description: string;
+	buttonText: string;
+	image: number | string;
+	subheading: string;
+	imagesArray: imagesObject[];
+};
+
+const { heading, description, buttonText, image, subheading, imagesArray } =
+	Astro.props;
+
+let imageUrl;
+if (image !== "") {
+	const response = await fetch(`${baseImageUrl}${image}`);
+	const imageObject = await response.json();
+	imageUrl = imageObject.guid.rendered;
+}
 ---
 
 <section>
@@ -7,27 +29,31 @@ import Button from "../Elements/Button.astro";
 		<div class="container">
 			<div class="content-size">
 				<h1 class="title title--medium">
-					We design affordable, sustainable & community-friendly homes.
+					{heading}
 				</h1>
 				<p class="regular-text">
-					Our vision is to build affordable homes and communities that
-					bring you peace of mind, reduce your expenses, create additional
-					revenue, and give you a sense of control.
+					{description}
 				</p>
 				<Button
-					text="Why should you care?"
+					text={buttonText}
 					href="#the-problem"
 				/>
 			</div>
 		</div>
 	</div>
 	<div class="image-container">
-		<img src="images/model-home-4.webp" />
+		<Image
+			src="/images/model-home-4.webp"
+			alt="imagem"
+			width="800"
+			height="800"
+		/>
+		<!-- <img src={imageUrl} /> -->
 	</div>
 	<div class="white-bg">
 		<div class="container">
 			<div class="content-size">
-				<p class="regular-text">We are in a joint venture with</p>
+				<p class="regular-text">{subheading}</p>
 			</div>
 		</div>
 	</div>
