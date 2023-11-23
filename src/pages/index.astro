@@ -8,20 +8,33 @@ import SaveMoney from "../components/Sections/SaveMoney.astro";
 import AboutUs from "../components/Sections/AboutUs.astro";
 import TalkToUs from "../components/Sections/TalkToUs.astro";
 
-const baseUrl = "http://headlesstest.local/wp-json/wp/v2/posts?slug=";
+const baseUrl = "http://headlesstest.local/wp-json/wp/v2/pages?slug=";
 
-async function fetchData(slug: string) {
-	const response = await fetch(`${baseUrl}slug`);
-	const data = await response.json();
-	console.log(data);
-}
+const response = await fetch(`${baseUrl}home`);
+const post = await response.json();
+const data = post[0];
+const {
+	acf: {
+		heading__herobanner,
+		description__herobanner,
+		button__herobanner,
+		image__herobanner,
+		subheading__herobanner,
+		partnerlogo1__herobanner,
+		partnerlogo2__herobanner,
+		partnerlogo3__herobanner,
+		partnerlogo4__herobanner,
+	},
+} = data;
 
-fetchData("herobanner");
-/* const response = await fetch(
-	"http://headlesstest.local/wp-json/wp/v2/posts?slug=herobanner",
-	); */
-/* const specificPost = data.filter((post) => post.slug === "herobanner");
-console.log(specificPost); */
+/* 
+This works - acf
+const r = await fetch("http://headlesstest.local/wp-json/wp/v2/pages/2"); 
+
+const r = await fetch("http://headlesstest.local/wp-json/wp/v2/media/25");
+*/
+
+/* .guid.rendered */
 ---
 
 <Layout title="Power From Within">
