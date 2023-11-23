@@ -7,12 +7,12 @@ import OurSolution from "../components/Sections/OurSolution.astro";
 import SaveMoney from "../components/Sections/SaveMoney.astro";
 import AboutUs from "../components/Sections/AboutUs.astro";
 import TalkToUs from "../components/Sections/TalkToUs.astro";
+import { baseUrl, baseImageUrl } from "../utils/domain.ts";
+import type { imagesObject } from "../utils/types.ts";
 
-const baseUrl = "http://headlesstest.local/wp-json/wp/v2/pages?slug=";
-
-const response = await fetch(`${baseUrl}home`);
-const post = await response.json();
-const data = post[0];
+let response = await fetch(`${baseUrl}home`);
+let post = await response.json();
+let data = post[0];
 const {
 	acf: {
 		heading__herobanner,
@@ -27,18 +27,54 @@ const {
 	},
 } = data;
 
-/* 
-This works - acf
-const r = await fetch("http://headlesstest.local/wp-json/wp/v2/pages/2"); 
+const imagesUrl: imagesObject[] = [];
 
-const r = await fetch("http://headlesstest.local/wp-json/wp/v2/media/25");
-*/
+if (partnerlogo1__herobanner && partnerlogo1__herobanner !== "") {
+	response = await fetch(`${baseImageUrl}${partnerlogo1__herobanner}`);
+	const imageUrl = await response.json();
+	imagesUrl.push({
+		name: "partnerlogo1__herobanner",
+		url: imageUrl.guid.rendered,
+	});
+}
 
-/* .guid.rendered */
+if (partnerlogo2__herobanner && partnerlogo2__herobanner !== "") {
+	response = await fetch(`${baseImageUrl}${partnerlogo2__herobanner}`);
+	const imageUrl = await response.json();
+	imagesUrl.push({
+		name: "partnerlogo2__herobanner",
+		url: imageUrl.guid.rendered,
+	});
+}
+
+if (partnerlogo3__herobanner && partnerlogo3__herobanner !== "") {
+	response = await fetch(`${baseImageUrl}${partnerlogo3__herobanner}`);
+	const imageUrl = await response.json();
+	imagesUrl.push({
+		name: "partnerlogo3__herobanner",
+		url: imageUrl.guid.rendered,
+	});
+}
+
+if (partnerlogo4__herobanner && partnerlogo4__herobanner !== "") {
+	response = await fetch(`${baseImageUrl}${partnerlogo4__herobanner}`);
+	const imageUrl = await response.json();
+	imagesUrl.push({
+		name: "partnerlogo4__herobanner",
+		url: imageUrl.guid.rendered,
+	});
+}
 ---
 
 <Layout title="Power From Within">
-	<HeroBanner />
+	<HeroBanner
+		heading={heading__herobanner}
+		description={description__herobanner}
+		buttonText={button__herobanner}
+		image={image__herobanner}
+		subheading={subheading__herobanner}
+		imagesArray={imagesUrl}
+	/>
 	<TheProblem />
 	<OurPhilosophy />
 	<OurSolution />
