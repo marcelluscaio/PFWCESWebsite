@@ -24,8 +24,15 @@ const {
 		partnerlogo2__herobanner,
 		partnerlogo3__herobanner,
 		partnerlogo4__herobanner,
+		heading_small_text__philosophy,
+		heading_big_text__philosophy,
+		image__philosophy,
+		list__philosophy,
+		button__philosophy,
 	},
 } = data;
+
+/* console.log(data); */
 
 const imagesUrl: imagesObject[] = [];
 
@@ -76,7 +83,13 @@ if (partnerlogo4__herobanner && partnerlogo4__herobanner !== "") {
 		imagesArray={imagesUrl}
 	/>
 	<TheProblem />
-	<OurPhilosophy />
+	<OurPhilosophy
+		heading_small_text={heading_small_text__philosophy}
+		heading_big_text={heading_big_text__philosophy}
+		image={image__philosophy}
+		list={list__philosophy}
+		buttonText={button__philosophy}
+	/>
 	<OurSolution />
 
 	<SaveMoney />
