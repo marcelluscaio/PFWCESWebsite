@@ -1,33 +1,32 @@
 ---
 import SectionHeading from "../Elements/SectionHeading.astro";
 import Button from "../Elements/Button.astro";
+import listObjectToArray from "../../utils/listObjectToArray.ts";
+
+const { heading_small_text, heading_big_text, list, image, button } = Astro.props;
+
+const listAsArray = listObjectToArray(list);
 ---
 
 <section id="the-problem">
 	<div class="container">
 		<div class="text-wrapper">
 			<SectionHeading
-				smallText="The problem"
-				bigText="A rising lifestyle cost"
+				smallText={heading_small_text}
+				bigText={heading_big_text}
 			/>
 		</div>
-		<!-- width="32%" -->
 		<ul>
-			<li>
-				<h3 class="title title--small">Ratification of fresh food</h3>
-				<p class="regular-text">
-					The cost of living has risen with inflation, with has made access
-					to natural and fresh food difficult for more and more Canadians.
-				</p>
-			</li>
-			<li>
-				<h3 class="title title--small">Home shortages</h3>
-				<p class="regular-text">
-					As the demand for homes outstrips the supply, home prices
-					increase, making it difficult for people with lower incomes to
-					afford a home.
-				</p>
-			</li>
+			{
+				listAsArray.map((item) => {
+					return (
+						<li>
+							<h3 class="title title--small">{item.title}</h3>
+							<p class="regular-text">{item.description}</p>
+						</li>
+					);
+				})
+			}
 			<li>
 				<img
 					src="images/TheProblem.png"
@@ -35,17 +34,9 @@ import Button from "../Elements/Button.astro";
 				/>
 			</li>
 			<li>
-				<h3 class="title title--small">Housing affordability</h3>
-				<p class="regular-text">
-					The average price of single family homes in 2022 has exceeded the
-					million dollar mark, making impossible for the working class
-					families to have home ownership.
-				</p>
-			</li>
-			<li>
 				<Button
 					href="#our-philosophy"
-					text="Our Philosophy"
+					text={button}
 				/>
 			</li>
 		</ul>
@@ -70,6 +61,26 @@ import Button from "../Elements/Button.astro";
 	ul img {
 		height: 100%;
 		object-fit: cover;
+	}
+
+	ul li:nth-child(1) {
+		order: 1;
+	}
+
+	ul li:nth-child(2) {
+		order: 2;
+	}
+
+	ul li:nth-child(3) {
+		order: 4;
+	}
+
+	ul li:nth-child(4) {
+		order: 3;
+	}
+
+	ul li:nth-child(5) {
+		order: 5;
 	}
 
 	ul li:last-child {
@@ -97,13 +108,17 @@ import Button from "../Elements/Button.astro";
 		}
 
 		ul li:nth-child(3) {
-			order: 1;
+			order: 3;
+		}
+
+		ul li:nth-child(4) {
+			order: 4;
 		}
 
 		ul li:last-child {
 			grid-column: span 1;
 
-			order: 2;
+			order: 5;
 		}
 	}
 </style>
