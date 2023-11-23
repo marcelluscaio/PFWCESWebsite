@@ -24,6 +24,11 @@ const {
 		partnerlogo2__herobanner,
 		partnerlogo3__herobanner,
 		partnerlogo4__herobanner,
+		heading_small_text__problem,
+		heading_big_text__problem,
+		list__problem,
+		image__problem,
+		button__problem,
 		heading_small_text__philosophy,
 		heading_big_text__philosophy,
 		image__philosophy,
@@ -82,7 +87,13 @@ if (partnerlogo4__herobanner && partnerlogo4__herobanner !== "") {
 		subheading={subheading__herobanner}
 		imagesArray={imagesUrl}
 	/>
-	<TheProblem />
+	<TheProblem
+		heading_small_text={heading_small_text__problem}
+		heading_big_text={heading_big_text__problem}
+		list={list__problem}
+		image={image__problem}
+		button={button__problem}
+	/>
 	<OurPhilosophy
 		heading_small_text={heading_small_text__philosophy}
 		heading_big_text={heading_big_text__philosophy}
