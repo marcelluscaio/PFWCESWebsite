@@ -1,11 +1,14 @@
-#  Figma
+# Figma
 
 https://www.figma.com/file/tP8vhZVZLqtAAZrjEkOH0d/Case-Study%3A-PFWCES?type=design&node-id=31-672&mode=design&t=A4KuxpqUyDJnieR3-0
 
+## Chores
+
+-   [ ] Add images to the partner section at hero banner
 
 ## check this out
-https://docs.astro.build/en/guides/images/
 
+https://docs.astro.build/en/guides/images/
 
 # Astro Starter Kit: Basics
 

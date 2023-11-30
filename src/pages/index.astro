@@ -11,8 +11,8 @@ import { baseUrl, baseImageUrl } from "../utils/domain.ts";
 import type { imagesObject } from "../utils/types.ts";
 
 let response = await fetch(`${baseUrl}home`);
-let post = await response.json();
-let data = post[0];
+let page = await response.json();
+let data = page[0];
 const {
 	acf: {
 		heading__herobanner,
@@ -34,10 +34,17 @@ const {
 		image__philosophy,
 		list__philosophy,
 		button__philosophy,
+		heading_small_text__solution,
+		heading_big_text__solution,
+		description_1__solution,
+		description_2__solution,
+		button__solution,
+		image_1__solution,
+		image_2__solution,
+		image_3__solution,
+		image_4__solution,
 	},
 } = data;
-
-/* console.log(data); */
 
 const imagesUrl: imagesObject[] = [];
 
@@ -101,7 +108,17 @@ if (partnerlogo4__herobanner && partnerlogo4__herobanner !== "") {
 		list={list__philosophy}
 		buttonText={button__philosophy}
 	/>
-	<OurSolution />
+	<OurSolution
+		heading_small_text={heading_small_text__solution}
+		heading_big_text={heading_big_text__solution}
+		description_1={description_1__solution}
+		description_2={description_2__solution}
+		button={button__solution}
+		image1={image_1__solution}
+		image2={image_2__solution}
+		image3={image_3__solution}
+		image4={image_4__solution}
+	/>
 
 	<SaveMoney />
 	<AboutUs />

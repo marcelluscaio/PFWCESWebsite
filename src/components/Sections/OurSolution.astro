@@ -1,25 +1,52 @@
 ---
+import { Image } from "astro:assets";
+import retrieveImageUrl from "../../utils/retrieveImageUrl.ts";
 import SectionHeading from "../Elements/SectionHeading.astro";
 import Button from "../Elements/Button.astro";
+
+type Props = {
+	heading_small_text: string;
+	heading_big_text: string;
+	description_1: string;
+	description_2: string;
+	button: string;
+	image1: number | string;
+	image2: number | string;
+	image3: number | string;
+	image4: number | string;
+};
+
+const {
+	heading_small_text,
+	heading_big_text,
+	description_1,
+	description_2,
+	button,
+	image1,
+	image2,
+	image3,
+	image4,
+} = Astro.props;
+
+const imagesIds = [image1, image2, image3, image4];
+
+const imagesUrls = await Promise.all(
+	imagesIds.map(async (id) => await retrieveImageUrl(id)),
+);
 ---
 
 <section id="our-solution">
 	<div class="container">
 		<div class="text-content">
 			<SectionHeading
-				smallText="Our Solution"
-				bigText="4Ever Homes and Communities"
+				smallText={heading_small_text}
+				bigText={heading_big_text}
 			/>
 			<p class="regular-text">
-				Our 4Ever Homes initiative represents our commitment to offering
-				hybrid and sustainable housing options. These homes are meticulously
-				designed to empower families by reducing costs, enhancing food
-				security, and fostering robust social connections.
+				{description_1}
 			</p>
 			<p class="regular-text">
-				The PFWCES team has united to tackle four significant challenges
-				affecting families in the modern world. Through creative solutions,
-				we are dedicated to bringing about transformative changes.
+				{description_2}
 			</p>
 
 			<ul>
@@ -33,22 +60,24 @@ import Button from "../Elements/Button.astro";
 			<div class="button">
 				<Button
 					href="#the-benefits"
-					text="The Benefits"
+					text={button}
 				/>
 			</div>
 		</div>
-		<div class="img">
-			<img src="images/model-home-2.webp" />
-		</div>
-		<div class="img">
-			<img src="images/model-home-4b.webp" />
-		</div>
-		<div class="img">
-			<img src="images/model-home-1.webp" />
-		</div>
-		<div class="img">
-			<img src="images/model-home-3.webp" />
-		</div>
+		{
+			imagesUrls.map((url) => {
+				return (
+					<div class="img">
+						<Image
+							src={url}
+							alt=""
+							width={1000}
+							height={1000}
+						/>
+					</div>
+				);
+			})
+		}
 	</div>
 </section>
 
@@ -56,7 +85,6 @@ import Button from "../Elements/Button.astro";
 	.container {
 		display: grid;
 		grid-template-columns: 1fr 1fr 43%;
-		/* grid-template-rows: auto auto; */
 		gap: var(--fs-9) var(--fs-8);
 	}
 
