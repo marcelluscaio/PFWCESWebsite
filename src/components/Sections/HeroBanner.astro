@@ -42,19 +42,24 @@ if (image !== "") {
 		</div>
 	</div>
 	<div class="image-container">
+		<!-- src="/images/model-home-4.webp" -->
 		<Image
-			src="/images/model-home-4.webp"
+			src={imageUrl}
 			alt="imagem"
 			width="800"
 			height="800"
 		/>
-		<!-- <img src={imageUrl} /> -->
 	</div>
+
 	<div class="white-bg">
 		<div class="container">
-			<div class="content-size">
-				<p class="regular-text">{subheading}</p>
-			</div>
+			{
+				imagesArray.length > 0 && (
+					<div class="content-size">
+						<p class="regular-text">{subheading}</p>
+					</div>
+				)
+			}
 		</div>
 	</div>
 </section>
