@@ -5,6 +5,14 @@ https://www.figma.com/file/tP8vhZVZLqtAAZrjEkOH0d/Case-Study%3A-PFWCES?type=desi
 ## Chores
 
 -   [ ] Add images to the partner section at hero banner
+-   [ ] Connect to all sections and header
+
+## Infrastructure
+
+-   I bought the domain on RegistroBr, changed the dns to cloudflare, redirected the A and CNAME to Netlify. I created a subdomain and directed it to wordpress.
+    Wordpress is hosted on Digital Ocean.
+    I added a hook on wordpress when it is updated Netlify rebuilds.
+    https://spacejelly.dev/posts/how-to-automate-deployments-on-content-change-in-wordpress-with-wp-webhooks-and-netlify/
 
 ## check this out
 
