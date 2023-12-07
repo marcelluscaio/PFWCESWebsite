@@ -1,64 +1,67 @@
 ---
-import SectionHeading from "../Elements/SectionHeading.astro";
+import listObjectToArray from "../../utils/listObjectToArray.ts";
+import retrieveImageUrl from "../../utils/retrieveImageUrl.ts";
+import { Image } from "astro:assets";
 import Button from "../Elements/Button.astro";
+
+const { heading, subheading, description, image, founder, list, button } =
+	Astro.props;
+
+const listAsArray = listObjectToArray(list);
+
+const imagesIds = [image, founder.image];
+const [groupImage, founderImage] = await Promise.all(
+	imagesIds.map(async (id) => await retrieveImageUrl(id)),
+);
 ---
 
 <section id="about-us">
 	<div class="container">
 		<div class="grid">
-			<img
-				src="images/AboutUs.png"
+			<Image
+				src={groupImage}
 				alt="Group of people"
+				width="700"
+				height="700"
 			/>
 			<div class="main-text">
-				<h2 class="title title--large">About us</h2>
-				<h3 class="title title--small">Since 2012</h3>
+				<h2 class="title title--large">{heading}</h2>
+				<h3 class="title title--small">{subheading}</h3>
 				<p class="regular-text">
-					PFWCES (Power From Within Clean Energy Society) is a
-					not-for-profit organization made up of collaborative forward
-					thinking volunteers, a creative united team from 8 countries and
-					growing.
+					{description}
 				</p>
 			</div>
 			<div class="card">
-				<img src="images/founder-profile-image.jpeg" />
-				<h3 class="title title--small">The founder</h3>
+				<Image
+					src={founderImage}
+					alt="picture of the founder"
+					width="300"
+					height="300"
+				/>
+				<h3 class="title title--small">{founder.title}</h3>
 				<p class="regular-text">
-					Lorem ipsum dolor sit amet consectetur. Sit sem lacus nunc ipsum
-					diam ultricies elit. Congue et ac neque massa.
+					{founder.description}
 				</p>
 				<Button
-					text="Find me on Linkedin"
+					text={founder.button}
 					href="https://www.linkedin.com/in/isaac-evans-gould-2053a417/"
 					type="Secondary"
 				/>
 			</div>
-			<div>
-				<h3 class="title title--small">Our Mission</h3>
-				<p class="regular-text">
-					Our mission is to promote sustainable living through clean energy
-					and integrated agriculture, with a focus on creating sustainable
-					homes and communities that are resilient, self-sufficient, and
-					environmentally friendly. We believe that by empowering
-					individuals and communities to live sustainably, we can create a
-					more just and equitable world for all.
-				</p>
-			</div>
-			<div>
-				<h3 class="title title--small">Our Vision</h3>
-				<p class="regular-text">
-					We envision a world where everyone has access to clean, renewable
-					energy, fresh and healthy food, and a healthy environment. We
-					believe that sustainable living is not just about reducing our
-					carbon footprint, but also about building strong and resilient
-					communities that are self-sufficient and can thrive in the face
-					of adversity.
-				</p>
-			</div>
+			{
+				listAsArray.map((item) => {
+					return (
+						<div>
+							<h3 class="title title--small">{item.title}</h3>
+							<p class="regular-text">{item.description}</p>
+						</div>
+					);
+				})
+			}
 			<div class="button">
 				<Button
+					text={button}
 					href="#talk-to-us"
-					text="Talk to us"
 				/>
 			</div>
 		</div>

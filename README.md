@@ -6,6 +6,8 @@ https://www.figma.com/file/tP8vhZVZLqtAAZrjEkOH0d/Case-Study%3A-PFWCES?type=desi
 
 -   [ ] Add images to the partner section at hero banner
 -   [ ] Connect to all sections and header
+-   [ ] Make types to sections
+-   [ ] Add partners images
 
 ## Infrastructure
 

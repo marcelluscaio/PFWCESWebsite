@@ -1,9 +1,13 @@
 ---
+import { Image } from "astro:assets";
+import retrieveImageUrl from "../../utils/retrieveImageUrl.ts";
 import SectionHeading from "../Elements/SectionHeading.astro";
 import Button from "../Elements/Button.astro";
 
 const { heading_small_text, heading_big_text, image, list, buttonText } =
 	Astro.props;
+
+const imageUrl = await retrieveImageUrl(image);
 
 const listAsArray = [];
 
@@ -19,9 +23,11 @@ for (const item in list) {
 <section id="our-philosophy">
 	<div class="container">
 		<div class="row">
-			<img
-				src="images/OurPhilosophy.jpg"
+			<Image
+				src={imageUrl}
 				alt="Woman and two girls looking at crops"
+				width="500"
+				height="500"
 			/>
 			<SectionHeading
 				smallText={heading_small_text}
