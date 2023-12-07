@@ -43,6 +43,11 @@ const {
 		image_2__solution,
 		image_3__solution,
 		image_4__solution,
+		heading_small_text__benefits,
+		heading_big_text__benefits,
+		list__benefits,
+		button_1__benefits,
+		button_2__benefits,
 	},
 } = data;
 
@@ -120,7 +125,13 @@ if (partnerlogo4__herobanner && partnerlogo4__herobanner !== "") {
 		image4={image_4__solution}
 	/>
 
-	<SaveMoney />
+	<SaveMoney
+		heading_small_text={heading_small_text__benefits}
+		heading_big_text={heading_big_text__benefits}
+		list={list__benefits}
+		button_1={button_1__benefits}
+		button_2={button_2__benefits}
+	/>
 	<AboutUs />
 	<TalkToUs />
 </Layout>

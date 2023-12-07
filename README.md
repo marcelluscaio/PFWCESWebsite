@@ -4,6 +4,7 @@ https://www.figma.com/file/tP8vhZVZLqtAAZrjEkOH0d/Case-Study%3A-PFWCES?type=desi
 
 ## Chores
 
+-   [ ] make props
 -   [ ] Add images to the partner section at hero banner
 -   [ ] Connect to all sections and header
 
