@@ -48,6 +48,13 @@ const {
 		list__benefits,
 		button_1__benefits,
 		button_2__benefits,
+		heading__about,
+		subheading__about,
+		description__about,
+		image__about,
+		founder_card__about,
+		list__about,
+		button__about,
 	},
 } = data;
 
@@ -132,7 +139,15 @@ if (partnerlogo4__herobanner && partnerlogo4__herobanner !== "") {
 		button_1={button_1__benefits}
 		button_2={button_2__benefits}
 	/>
-	<AboutUs />
+	<AboutUs
+		heading={heading__about}
+		subheading={subheading__about}
+		description={description__about}
+		image={image__about}
+		founder={founder_card__about}
+		list={list__about}
+		button={button__about}
+	/>
 	<TalkToUs />
 </Layout>
 
