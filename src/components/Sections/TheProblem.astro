@@ -1,11 +1,16 @@
 ---
 import listObjectToArray from "../../utils/listObjectToArray.ts";
+import retrieveImageUrl from "../../utils/retrieveImageUrl.ts";
+import { Image } from "astro:assets";
 import SectionHeading from "../Elements/SectionHeading.astro";
 import Button from "../Elements/Button.astro";
 
 const { heading_small_text, heading_big_text, list, image, button } = Astro.props;
 
 const listAsArray = listObjectToArray(list);
+
+const imageUrl = await retrieveImageUrl(image);
+console.log(imageUrl);
 ---
 
 <section id="the-problem">
@@ -28,9 +33,11 @@ const listAsArray = listObjectToArray(list);
 				})
 			}
 			<li>
-				<img
-					src="images/TheProblem.png"
+				<Image
+					src={imageUrl}
 					alt="Woman looking worried"
+					width="300"
+					height="300"
 				/>
 			</li>
 			<li>
