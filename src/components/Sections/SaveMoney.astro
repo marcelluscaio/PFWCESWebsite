@@ -1,71 +1,41 @@
 ---
+import listObjectToArray from "../../utils/listObjectToArray.ts";
 import SectionHeading from "../Elements/SectionHeading.astro";
 import Button from "../Elements/Button.astro";
+
+const { heading_small_text, heading_big_text, list, button_1, button_2 } =
+	Astro.props;
+
+const listAsArray = listObjectToArray(list);
 ---
 
 <section id="the-benefits">
 	<div class="container">
 		<div class="main-title">
 			<SectionHeading
-				smallText="The benefits"
-				bigText="Save money, live better, enjoy your social life!"
+				smallText={heading_small_text}
+				bigText={heading_big_text}
 			/>
 		</div>
 		<ul>
-			<li>
-				<h3 class="title title--small">Tackling the Housing Crisis</h3>
-				<p class="regular-text">
-					In many parts of the world, there is a critical shortage of
-					affordable housing. Families struggle to find suitable living
-					spaces, leading to overcrowding and instability. PFWCES
-					recognized this issue and decided to act. We've designed the
-					4Ever Homes to not only provide comfortable living spaces but
-					also to set a new standard for speed and efficiency in home
-					construction. Our homes are the answer to this crisis, offering a
-					sustainable solution for families in need.
-				</p>
-			</li>
-			<li>
-				<h3 class="title title--small">Affordable Living</h3>
-				<p class="regular-text">
-					The soaring costs of housing are a major concern for families
-					worldwide. PFWCES understands the importance of affordable homes.
-					Our 4Ever Homes are not just sustainable but also cost-effective.
-					They save families over $5000 annually, offering financial relief
-					and a chance at homeownership that may have seemed out of reach
-					before.
-				</p>
-			</li>
-			<li>
-				<h3 class="title title--small">Fresh Agriculture</h3>
-				<p class="regular-text">
-					As urbanization advances, the connection between people and their
-					food sources dwindles. PFWCES believes in reestablishing this
-					connection. Our integrated agriculture rooms provide families
-					with the opportunity to grow their own fresh produce, fostering
-					self-sufficiency and healthier eating habits. We are putting the
-					"farm" back into the family.
-				</p>
-			</li>
-			<li>
-				<h3 class="title title--small">Clean Energy Resources:</h3>
-				<p class="regular-text">
-					The world is at a crossroads when it comes to energy. PFWCES
-					recognizes the importance of clean energy for the planet's
-					future. Our homes incorporate clean energy technologies, reducing
-					our reliance on non-renewable resources. By embracing these
-					technologies, we're helping families save on energy costs while
-					reducing their carbon footprint.
-				</p>
-			</li>
+			{
+				listAsArray.map((item) => {
+					return (
+						<li>
+							<h3 class="title title--small">{item.title}</h3>
+							<p class="regular-text">{item.description}</p>
+						</li>
+					);
+				})
+			}
 		</ul>
 		<div class="button-container">
 			<Button
-				text="Talk to us"
+				text={button_1}
 				href="#talk-to-us"
 			/>
 			<Button
-				text="Our Company"
+				text={button_2}
 				href="#about-us"
 				type="Secondary"
 			/>

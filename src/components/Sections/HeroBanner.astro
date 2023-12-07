@@ -1,8 +1,8 @@
 ---
-import Button from "../Elements/Button.astro";
 import { Image } from "astro:assets";
-import { baseImageUrl } from "../../utils/domain.ts";
 import type { imagesObject } from "../../utils/types.ts";
+import retrieveImageUrl from "../../utils/retrieveImageUrl";
+import Button from "../Elements/Button.astro";
 
 type Props = {
 	heading: string;
@@ -16,12 +16,7 @@ type Props = {
 const { heading, description, buttonText, image, subheading, imagesArray } =
 	Astro.props;
 
-let imageUrl;
-if (image !== "") {
-	const response = await fetch(`${baseImageUrl}${image}`);
-	const imageObject = await response.json();
-	imageUrl = imageObject.guid.rendered;
-}
+const imageUrl = await retrieveImageUrl(image);
 ---
 
 <section>
@@ -42,7 +37,6 @@ if (image !== "") {
 		</div>
 	</div>
 	<div class="image-container">
-		<!-- src="/images/model-home-4.webp" -->
 		<Image
 			src={imageUrl}
 			alt="imagem"
