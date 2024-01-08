@@ -4,10 +4,12 @@ https://www.figma.com/file/tP8vhZVZLqtAAZrjEkOH0d/Case-Study%3A-PFWCES?type=desi
 
 ## Chores
 
--   [ ] Add images to the partner section at hero banner
--   [ ] Connect to all sections and header
+-   [ ] Add images to the partner section at hero banner (Caio)
+-   [ ] Fetch data for header and footer
+-   [ ] Make form actually send email
+
 -   [ ] Make types to sections
--   [ ] Add partners images
+-   [ ]Organize code on index
 
 ## Infrastructure
 
