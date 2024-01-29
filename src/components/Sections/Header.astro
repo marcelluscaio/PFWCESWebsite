@@ -1,18 +1,37 @@
 ---
+import { baseUrl } from "../../utils/domain";
+import retrieveImageUrl from "../../utils/retrieveImageUrl";
 import Button from "../Elements/Button.astro";
+
+let response = await fetch(`${baseUrl}home`);
+let page = await response.json();
+let data = page[0];
+
+const {
+	acf: { logo__header, company_name__header, list__header },
+} = data;
+
+const imageUrl = await retrieveImageUrl(logo__header);
+
+const menuStrings = Object.entries<{ text: string; url: string }>(list__header).map(
+	(item) => ({
+		text: item[1].text,
+		url: `#${item[1].text.toLowerCase().normalize().replaceAll(" ", "-")}`,
+	}),
+);
 ---
 
 <header>
 	<div class="container">
 		<a
-			href="#"
+			href="/"
 			class="title"
 		>
 			<img
-				src="images/logo.png"
+				src={imageUrl}
 				alt="PFWCES logo"
 			/>
-			 PFWCES
+			{company_name__header}
 		</a>
 		<button id="hamburger">
 			<div></div>
@@ -21,47 +40,31 @@ import Button from "../Elements/Button.astro";
 		</button>
 		<nav id="navigation">
 			<ul>
-				<li>
-					<a
-						href="#the-problem"
-						class="title title--header"
-						>The Problem</a
-					>
-				</li>
-				<li>
-					<a
-						href="#our-philosophy"
-						class="title title--header"
-						>Our Philosophy</a
-					>
-				</li>
-				<li>
-					<a
-						href="#our-solution"
-						class="title title--header"
-						>Solution</a
-					>
-				</li>
-				<li>
-					<a
-						href="#the-benefits"
-						class="title title--header"
-						>Benefits</a
-					>
-				</li>
-				<li>
-					<a
-						href="#about-us"
-						class="title title--header"
-						>About us</a
-					>
-				</li>
-				<li>
-					<Button
-						text="Talk to us"
-						href="#talk-to-us"
-					/>
-				</li>
+				{
+					menuStrings.map((item, key) => {
+						if (key !== menuStrings.length - 1) {
+							return (
+								<li>
+									<a
+										href={item.url}
+										class="title title--header"
+									>
+										{item.text}
+									</a>
+								</li>
+							);
+						} else {
+							return (
+								<li>
+									<Button
+										text={item.text}
+										href={item.url}
+									/>
+								</li>
+							);
+						}
+					})
+				}
 			</ul>
 		</nav>
 	</div>

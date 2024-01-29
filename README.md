@@ -6,6 +6,7 @@ https://www.figma.com/file/tP8vhZVZLqtAAZrjEkOH0d/Case-Study%3A-PFWCES?type=desi
 
 -   [ ] Add images to the partner section at hero banner (Caio)
 -   [ ] Fetch data for header and footer
+-   [ ] Make keyboard navigation better
 -   [ ] Make form actually send email
 
 -   [ ] Make types to sections
