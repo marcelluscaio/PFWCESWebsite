@@ -1,6 +1,7 @@
 ---
 import { baseUrl } from "../../utils/domain";
 import retrieveImageUrl from "../../utils/retrieveImageUrl";
+import stringToId from "../../utils/stringToId";
 import Button from "../Elements/Button.astro";
 
 let response = await fetch(`${baseUrl}home`);
@@ -16,7 +17,7 @@ const imageUrl = await retrieveImageUrl(logo__header);
 const menuStrings = Object.entries<{ text: string; url: string }>(list__header).map(
 	(item) => ({
 		text: item[1].text,
-		url: `#${item[1].text.toLowerCase().normalize().replaceAll(" ", "-")}`,
+		url: stringToId(item[1].text),
 	}),
 );
 ---

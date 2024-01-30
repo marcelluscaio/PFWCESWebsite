@@ -81,9 +81,38 @@ import Button from "../Elements/Button.astro";
 					type="Secondary"
 					id="clearButton"
 				/>
+				<script>
+					const button = document.querySelector("#submit");
+					button.addEventListener("click", (e) => {
+						e.preventDefault();
+						console.log("hi");
+						const content = {
+							"your-name": "Caio",
+							"your-email": "teste@teste.com",
+							"your-subject": "teste@teste.com",
+							"your-message": "teste@teste.com",
+						};
+
+						const formContent = JSON.stringify(content);
+						fetch(
+							"https://backend.caiocabralmeteora.com.br/wp-json/contact-form-7/v1/contact-forms/30372f9/feedback",
+							{
+								method: "post",
+								headers: {
+									"Content-Type": "application/json",
+								},
+								body: formContent,
+							},
+						)
+							.then((response) => response.json())
+							.then((response) => console.log(response));
+						/* https://https//backend.caiocabralmeteora.com.br/wp-json/contact-form-7/v1/contact-forms/30372f9/feedback */
+					});
+				</script>
 				<Button
-					href="#"
+					href=""
 					text="Submit"
+					id="submit"
 				/>
 			</div>
 		</form>

@@ -51,6 +51,15 @@ const imageUrl = await retrieveImageUrl(image);
 				imagesArray.length > 0 && (
 					<div class="content-size">
 						<p class="regular-text">{subheading}</p>
+						<ul>
+							{imagesArray.map((item) => {
+								return (
+									<li class="partners">
+										<img src={item.url} />
+									</li>
+								);
+							})}
+						</ul>
 					</div>
 				)
 			}
@@ -102,6 +111,11 @@ const imageUrl = await retrieveImageUrl(image);
 		/* 91.7% is the container's width */
 		right: max(calc(((100 - 91.7) / 2) * 1%), calc((100% - 1400px) / 2));
 		left: calc((((100 - 91.7) / 2) * 1%) + 133px + (91.7% / 2));
+	}
+
+	.partners {
+		width: 4.5rem;
+		aspect-ratio: 1;
 	}
 
 	img {
