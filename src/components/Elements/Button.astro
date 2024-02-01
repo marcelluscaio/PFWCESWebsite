@@ -3,21 +3,25 @@ interface Props {
 	text: string;
 	href: string;
 	type?: "Primary" | "Secondary";
+	tag?: "a" | "button";
 	id?: string;
 }
 
-const { text, href, type = "Primary", id = "" } = Astro.props;
+const { text, href, type = "Primary", tag = "a", id = "" } = Astro.props;
+const Tag = tag;
+const classType = type === "Secondary" ? "secondary" : "";
 ---
 
-<a
-	href={href}
-	class=`title ${type==="Secondary" ? "secondary" : ""}`
+<Tag
+	class={"title " + classType}
 	id={id}
+	href={tag === "a" ? href : ""}
 >
 	{text}
-</a>
+</Tag>
 
 <style>
+	button,
 	a {
 		display: inline-block;
 
@@ -33,17 +37,19 @@ const { text, href, type = "Primary", id = "" } = Astro.props;
 		box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
 	}
 
+	button:hover,
 	a:hover {
 		background-color: var(--red-800);
 	}
 
+	button.secondary,
 	a.secondary {
 		background-color: transparent;
 
 		color: var(--black-400);
 	}
 
-	a.secondary:hover {
+	button.secondary:hover. a.secondary:hover {
 		background-color: rgba(0, 0, 0, 0.05);
 	}
 </style>
