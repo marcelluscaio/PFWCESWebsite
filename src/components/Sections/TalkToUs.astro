@@ -4,8 +4,17 @@ import Button from "../Elements/Button.astro";
 
 <section id="talk-to-us">
 	<div class="container container--form">
-		<form id="contact-form">
+		<form
+			id="contact-form"
+			action="https://formsubmit.co/ocaiocabral@gmail.com"
+			method="POST"
+		>
 			<h2 class="title title--large">Talk to us</h2>
+			<input
+				type="hidden"
+				name="_next"
+				value="https://pfwces.netlify.app/"
+			/>
 			<ul>
 				<li>
 					<label for="name">Name</label>
@@ -83,10 +92,6 @@ import Button from "../Elements/Button.astro";
 				>
 					Clear all
 				</Button>
-
-				<!-- 				adaptar botao para ser um botao
-				mudar estrutura da imagem para grid -->
-
 				<Button
 					tag="button"
 					type="submit"
