@@ -43,10 +43,12 @@ const [groupImage, founderImage] = await Promise.all(
 					{founder.description}
 				</p>
 				<Button
-					text={founder.button}
+					tag="a"
 					href="https://www.linkedin.com/in/isaac-evans-gould-2053a417/"
-					type="Secondary"
-				/>
+					variant="secondary"
+				>
+					{founder.button}
+				</Button>
 			</div>
 			{
 				listAsArray.map((item) => {
@@ -60,9 +62,11 @@ const [groupImage, founderImage] = await Promise.all(
 			}
 			<div class="button">
 				<Button
-					text={button}
+					tag="a"
 					href="#talk-to-us"
-				/>
+				>
+					{button}
+				</Button>
 			</div>
 		</div>
 	</div>

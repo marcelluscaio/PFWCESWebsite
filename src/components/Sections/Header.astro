@@ -58,9 +58,11 @@ const menuStrings = Object.entries<{ text: string; url: string }>(list__header).
 							return (
 								<li>
 									<Button
-										text={item.text}
+										tag="a"
 										href={item.url}
-									/>
+									>
+										{item.text}
+									</Button>
 								</li>
 							);
 						}

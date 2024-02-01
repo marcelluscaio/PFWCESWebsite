@@ -76,39 +76,13 @@ import Button from "../Elements/Button.astro";
 			</ul>
 			<div class="button-container">
 				<Button
-					text="Clear all"
 					id="clearButton"
-					style="Secondary"
+					variant="secondary"
 					tag="button"
 					type="reset"
-				/>
-				<!-- <script>
-					const button = document.querySelector("#submit");
-					button.addEventListener("click", (e) => {
-						e.preventDefault();
-						console.log("hi");
-						const content = {
-							"your-name": "Caio",
-							"your-email": "teste@teste.com",
-							"your-subject": "teste@teste.com",
-							"your-message": "teste@teste.com",
-						};
-
-						const formContent = JSON.stringify(content);
-						fetch(
-							"https://backend.caiocabralmeteora.com.br/wp-json/contact-form-7/v1/contact-forms/30372f9/feedback",
-							{
-								method: "post",
-								headers: {
-									"Content-Type": "application/json",
-								},
-								body: formContent,
-							},
-						)
-							.then((response) => response.json())
-							.then((response) => console.log(response));
-					});
-				</script> -->
+				>
+					Clear all
+				</Button>
 
 				<!-- 				adaptar botao para ser um botao
 				mudar estrutura da imagem para grid -->
@@ -116,99 +90,104 @@ import Button from "../Elements/Button.astro";
 				<Button
 					tag="button"
 					type="submit"
-					text="Submit"
 					id="submit"
-				/>
+				>
+					Submit
+				</Button>
 			</div>
-		</form>
-	</div>
-</section>
 
-<style>
-	/* .form-container {
+			<style>
+				/* .form-container {
 		width: 43%;
 		margin: auto;
 	} */
 
-	.container--form {
-		width: 43%;
-	}
+				.container--form {
+					width: 43%;
+				}
 
-	h2 {
-		margin-bottom: var(--fs-11);
-		text-align: center;
-	}
+				h2 {
+					margin-bottom: var(--fs-11);
+					text-align: center;
+				}
 
-	ul {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		row-gap: var(--fs-2);
-		column-gap: var(--fs-7);
+				ul {
+					display: grid;
+					grid-template-columns: 1fr 1fr;
+					row-gap: var(--fs-2);
+					column-gap: var(--fs-7);
 
-		margin-bottom: var(--fs-8);
-	}
+					margin-bottom: var(--fs-8);
+				}
 
-	li {
-		display: flex;
-		flex-direction: column;
-	}
+				li {
+					display: flex;
+					flex-direction: column;
+				}
 
-	li:first-child {
-		grid-column: span 2;
-	}
+				li:first-child {
+					grid-column: span 2;
+				}
 
-	li:last-child {
-		grid-column: span 2;
-	}
+				li:last-child {
+					grid-column: span 2;
+				}
 
-	label {
-		margin-bottom: 0.3rem;
-	}
+				label {
+					margin-bottom: 0.3rem;
+				}
 
-	input,
-	textarea {
-		padding: 0.5rem;
+				input,
+				textarea {
+					padding: 0.5rem;
 
-		border: 1px solid #000000;
-		background-color: var(--yellow-200);
-	}
+					border: 1px solid #000000;
+					background-color: var(--yellow-200);
+				}
 
-	textarea {
-		resize: vertical;
-	}
+				textarea {
+					resize: vertical;
+				}
 
-	.button-container {
-		display: flex;
-		gap: var(--fs-2);
-	}
+				.button-container {
+					display: flex;
+					gap: var(--fs-2);
+				}
 
-	@media (max-width: 60em) {
-		.container--form {
-			width: 91.7%;
-		}
-	}
+				@media (max-width: 60em) {
+					.container--form {
+						width: 91.7%;
+					}
+				}
 
-	@media (max-width: 35em) {
-		ul {
-			grid-template-columns: 1fr;
-		}
+				@media (max-width: 35em) {
+					ul {
+						grid-template-columns: 1fr;
+					}
 
-		ul > * {
-			grid-column: span 1;
-		}
+					ul > * {
+						grid-column: span 1;
+					}
 
-		.button-container {
-			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-			text-align: center;
-		}
-	}
-</style>
+					.button-container {
+						display: grid;
+						grid-template-columns: repeat(2, 1fr);
+						text-align: center;
+					}
+				}
+			</style>
 
-<script>
-	const myForm = document.getElementById("contact-form") as HTMLFormElement;
+			<script>
+				const myForm = document.getElementById(
+					"contact-form",
+				) as HTMLFormElement;
 
-	document.getElementById("clearButton").addEventListener("click", function () {
-		myForm.reset();
-	});
-</script>
+				document
+					.getElementById("clearButton")
+					.addEventListener("click", function () {
+						myForm.reset();
+					});
+			</script>
+		</form>
+	</div>
+</section>

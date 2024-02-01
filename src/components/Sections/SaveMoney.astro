@@ -31,14 +31,18 @@ const listAsArray = listObjectToArray(list);
 		</ul>
 		<div class="button-container">
 			<Button
-				text={button_1}
+				tag="a"
 				href="#talk-to-us"
-			/>
+			>
+				{button_1}
+			</Button>
 			<Button
-				text={button_2}
+				tag="a"
 				href="#about-us"
-				type="Secondary"
-			/>
+				variant="secondary"
+			>
+				{button_2}
+			</Button>
 		</div>
 	</div>
 </section>

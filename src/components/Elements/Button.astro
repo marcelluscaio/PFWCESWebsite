@@ -1,51 +1,44 @@
 ---
-import type { Code } from "astro:components";
+type Tag = "a" | "button";
 
-interface Props {
-	text: string;
-	href?: string;
-	style?: "Primary" | "Secondary";
-	tag?: "a" | "button";
+type AnchorProps = {
+	href: string;
+};
+
+type ButtonProps = {
 	type?: "submit" | "button" | "reset";
-	id?: string;
-}
+};
 
-const {
-	text,
-	href,
-	style = "Primary",
-	tag = "a",
-	id = "",
-	type = "button",
-} = Astro.props;
+type Props<T extends Tag> = {
+	tag: T;
+	variant?: "primary" | "secondary";
+	id?: string;
+} & (T extends "a" ? AnchorProps : ButtonProps);
+
+const { tag, variant = "primary", id = "", href, type = "button" } = Astro.props;
 
 const Tag = tag;
 
-const classType = style === "Secondary" ? "secondary" : "";
-
 const baseAttributes = {
-	class: `title  ${classType}`,
 	id: id,
+	class: `title  ${variant}`,
 };
 
 const anchorAttributes = {
-	href: tag === "a" ? href : "",
+	href: href,
 };
 
 const buttonAttributes = {
 	type: type,
 };
 
-const attributedBasedOnTag = tag === "a" ? anchorAttributes : buttonAttributes;
+const attributeBasedOnTag = tag === "a" ? anchorAttributes : buttonAttributes;
 
-const attributes = { ...baseAttributes, ...attributedBasedOnTag };
+const attributes = { ...baseAttributes, ...attributeBasedOnTag };
 ---
 
-<!-- class={"title " + classType}
-id={id}
-href={tag === "a" ? href : ""} -->
 <Tag {...attributes}>
-	{text}
+	<slot />
 </Tag>
 
 <style>
