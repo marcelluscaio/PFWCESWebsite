@@ -76,10 +76,11 @@ import Button from "../Elements/Button.astro";
 			</ul>
 			<div class="button-container">
 				<Button
-					href="javascript:void(0);"
 					text="Clear all"
-					type="Secondary"
 					id="clearButton"
+					style="Secondary"
+					tag="button"
+					type="reset"
 				/>
 				<!-- <script>
 					const button = document.querySelector("#submit");
@@ -113,7 +114,8 @@ import Button from "../Elements/Button.astro";
 				mudar estrutura da imagem para grid -->
 
 				<Button
-					href=""
+					tag="button"
+					type="submit"
 					text="Submit"
 					id="submit"
 				/>
