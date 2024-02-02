@@ -100,88 +100,6 @@ import Button from "../Elements/Button.astro";
 					Submit
 				</Button>
 			</div>
-
-			<style>
-				/* .form-container {
-		width: 43%;
-		margin: auto;
-	} */
-
-				.container--form {
-					width: 43%;
-				}
-
-				h2 {
-					margin-bottom: var(--fs-11);
-					text-align: center;
-				}
-
-				ul {
-					display: grid;
-					grid-template-columns: 1fr 1fr;
-					row-gap: var(--fs-2);
-					column-gap: var(--fs-7);
-
-					margin-bottom: var(--fs-8);
-				}
-
-				li {
-					display: flex;
-					flex-direction: column;
-				}
-
-				li:first-child {
-					grid-column: span 2;
-				}
-
-				li:last-child {
-					grid-column: span 2;
-				}
-
-				label {
-					margin-bottom: 0.3rem;
-				}
-
-				input,
-				textarea {
-					padding: 0.5rem;
-
-					border: 1px solid #000000;
-					background-color: var(--yellow-200);
-				}
-
-				textarea {
-					resize: vertical;
-				}
-
-				.button-container {
-					display: flex;
-					gap: var(--fs-2);
-				}
-
-				@media (max-width: 60em) {
-					.container--form {
-						width: 91.7%;
-					}
-				}
-
-				@media (max-width: 35em) {
-					ul {
-						grid-template-columns: 1fr;
-					}
-
-					ul > * {
-						grid-column: span 1;
-					}
-
-					.button-container {
-						display: grid;
-						grid-template-columns: repeat(2, 1fr);
-						text-align: center;
-					}
-				}
-			</style>
-
 			<script>
 				const myForm = document.getElementById(
 					"contact-form",
@@ -196,3 +114,79 @@ import Button from "../Elements/Button.astro";
 		</form>
 	</div>
 </section>
+
+<style>
+	.container--form {
+		width: 43%;
+	}
+
+	h2 {
+		margin-bottom: var(--fs-11);
+		text-align: center;
+	}
+
+	ul {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		row-gap: var(--fs-2);
+		column-gap: var(--fs-7);
+
+		margin-bottom: var(--fs-8);
+	}
+
+	li {
+		display: flex;
+		flex-direction: column;
+	}
+
+	li:first-child {
+		grid-column: span 2;
+	}
+
+	li:last-child {
+		grid-column: span 2;
+	}
+
+	label {
+		margin-bottom: 0.3rem;
+	}
+
+	input,
+	textarea {
+		padding: 0.5rem;
+
+		border: 1px solid #000000;
+		background-color: var(--yellow-200);
+	}
+
+	textarea {
+		resize: vertical;
+	}
+
+	.button-container {
+		display: flex;
+		gap: var(--fs-2);
+	}
+
+	@media (max-width: 60em) {
+		.container--form {
+			width: 91.7%;
+		}
+	}
+
+	@media (max-width: 35em) {
+		ul {
+			grid-template-columns: 1fr;
+		}
+
+		ul > * {
+			grid-column: span 1;
+		}
+
+		.button-container {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			text-align: center;
+		}
+	}
+</style>

@@ -12,16 +12,24 @@ type ButtonProps = {
 type Props<T extends Tag> = {
 	tag: T;
 	variant?: "primary" | "secondary";
-	id?: string;
+	classList?: string[];
+	[index: string]: string | string[];
 } & (T extends "a" ? AnchorProps : ButtonProps);
 
-const { tag, variant = "primary", id = "", href, type = "button" } = Astro.props;
+const {
+	tag,
+	variant = "primary",
+	classList = [],
+	href,
+	type = "button",
+	...rest
+} = Astro.props;
 
 const Tag = tag;
 
 const baseAttributes = {
-	id: id,
-	class: `title  ${variant}`,
+	class: ["title", variant, ...classList],
+	...rest,
 };
 
 const anchorAttributes = {
@@ -37,7 +45,10 @@ const attributeBasedOnTag = tag === "a" ? anchorAttributes : buttonAttributes;
 const attributes = { ...baseAttributes, ...attributeBasedOnTag };
 ---
 
-<Tag {...attributes}>
+<Tag
+	class:list={[attributes.classList]}
+	{...attributes}
+>
 	<slot />
 </Tag>
 
@@ -73,4 +84,8 @@ const attributes = { ...baseAttributes, ...attributeBasedOnTag };
 	button.secondary:hover. a.secondary:hover {
 		background-color: rgba(0, 0, 0, 0.05);
 	}
+	/* type ExcludingPropsValues = Omit<string, "tag" & "variant" & "classList" & "href">; */
+	/* [qualquer: ExcludingPropsValues]: string; */
+
+	/* [index: string]: string; */
 </style>
