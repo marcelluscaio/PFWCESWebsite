@@ -1,23 +1,16 @@
 ---
+import type { Polymorphic } from "astro/types";
+
 type Tag = "a" | "button";
 
-type AnchorProps = {
-	href: string;
-};
-
-type ButtonProps = {
-	type?: "submit" | "button" | "reset";
-};
-
-type Props<T extends Tag> = {
-	tag: T;
+type Props<TagGeneric extends Tag> = {
+	tag: TagGeneric;
 	variant?: "primary" | "secondary";
 	classList?: string[];
-	[index: string]: string | string[];
-} & (T extends "a" ? AnchorProps : ButtonProps);
+} & Polymorphic<{ as: TagGeneric }>;
 
 const {
-	tag,
+	tag: Tag,
 	variant = "primary",
 	classList = [],
 	href,
@@ -25,10 +18,8 @@ const {
 	...rest
 } = Astro.props;
 
-const Tag = tag;
-
 const baseAttributes = {
-	class: ["title", variant, ...classList],
+	classes: ["title", variant, ...classList],
 	...rest,
 };
 
@@ -40,13 +31,15 @@ const buttonAttributes = {
 	type: type,
 };
 
-const attributeBasedOnTag = tag === "a" ? anchorAttributes : buttonAttributes;
+const attributeBasedOnTag = Tag === "a" ? anchorAttributes : buttonAttributes;
 
-const attributes = { ...baseAttributes, ...attributeBasedOnTag };
+const allAttributes = { ...baseAttributes, ...attributeBasedOnTag };
+
+const { classes, ...attributes } = allAttributes;
 ---
 
 <Tag
-	class:list={[attributes.classList]}
+	class:list={[classes]}
 	{...attributes}
 >
 	<slot />
@@ -84,8 +77,4 @@ const attributes = { ...baseAttributes, ...attributeBasedOnTag };
 	button.secondary:hover. a.secondary:hover {
 		background-color: rgba(0, 0, 0, 0.05);
 	}
-	/* type ExcludingPropsValues = Omit<string, "tag" & "variant" & "classList" & "href">; */
-	/* [qualquer: ExcludingPropsValues]: string; */
-
-	/* [index: string]: string; */
 </style>
